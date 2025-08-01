@@ -26,6 +26,8 @@ manifest:
       url-base: https://github.com/urob
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: kevinpastor
+      url-base: https://github.com/kevinpastor
 
   projects:
     - name: zmk
@@ -43,6 +45,9 @@ manifest:
       path: modules/zmk/leader-key
     - name: zmk-tri-state
       path: modules/zmk/tri-state
+    - name: nice-view-elemental
+      remote: kevinpastor
+      revision: main
 
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
@@ -59,6 +64,7 @@ manifest:
           - hal_stm32
           - lvgl
           - tinycrypt
+          - nice_nano_v2
 
   self:
     path: config

@@ -1,14 +1,14 @@
 #define CONFIG_WIRELESS
-#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                   \
+#define ZMK_BASE_LAYER(name, LN, RN, LT, RT, LM, RM, LB, RB, LH, RH, sensors)  \
     ZMK_LAYER(                                                                 \
         name,                                                                  \
+                 LN RN                                                         \
                  LT RT                                                         \
                  LM RM                                                         \
                  LB RB                                                         \
-        &kp LGUI LH RH &smart_mouse                                            \
+                 LH &mo LOWER &kp RET &kp SPACE &mo RAISE RH,                  \
+                 sensors                                                       \
     )
 
-#include "zmk-helpers/key-labels/36.h"
+#include "zmk-helpers/key-labels/sofle.h"
 #include "base.keymap"
-
-/{ chosen { zmk,physical-layout = &foostan_corne_5col_layout; }; };
