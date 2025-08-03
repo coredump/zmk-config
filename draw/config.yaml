@@ -173,3 +173,5 @@ draw_config:
   append_colon_to_layer_header: false
   dark_mode: auto
   footer_text: "coredump/zmk-config"
+  separate_combo_diagrams: false
+  n_columns: 2

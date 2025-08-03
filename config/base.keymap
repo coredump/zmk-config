@@ -21,27 +21,18 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define MOUSE 4
 
-ZMK_HOLD_TAP(hml,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <230>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
-    hold-trigger-on-release;
-)
+#define QUICK_TAP_MS 175
 
-/* Right-hand HRMs. */
-ZMK_HOLD_TAP(hmr,
-    flavor = "balanced";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <230>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;
-)
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
+  ZMK_HOLD_TAP(NAME, bindings = <HOLD>, <TAP>; flavor = "balanced";            \
+               tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
+               require-prior-idle-ms = <180>; hold-trigger-on-release;         \
+               hold-trigger-key-positions = <TRIGGER_POS>;)
+
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
 
 // Alt+Tab swapper, requires tri-state module.
@@ -49,6 +40,13 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>;)
 
 #include "combos.dtsi"
+#include "mouse.dtsi"
+
+ZMK_TRI_STATE(
+    smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+    ignored-key-positions =
+        <LT2 LT3 LH0 LH1 RT2 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
+    ignored-layers = <MOUSE RAISE ADJUST>;)
 
 #define ___ &trans
 #define XXX &none
@@ -102,11 +100,21 @@ ZMK_BASE_LAYER(Raise,
 
 ZMK_BASE_LAYER(Adjust,
     &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &bt BT_SEL 4, XXX XXX XXX XXX XXX XXX,
-    XXX XXX XXX XXX XXX XXX, XXX XXX XXX XXX XXX XXX,
-    XXX XXX XXX XXX XXX XXX, XXX XXX XXX XXX XXX XXX,
+    XXX XXX XXX XXX XXX &bootloader, &bootloader XXX XXX XXX XXX XXX,
+    XXX XXX XXX XXX XXX &sys_reset, &sys_reset XXX XXX XXX XXX XXX,
     XXX XXX XXX XXX XXX XXX XXX, XXX XXX XXX XXX XXX XXX XXX,
     XXX XXX XXX, XXX XXX XXX,
     &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
 )
+
+ZMK_BASE_LAYER(Mouse,
+    ___ ___ ___ ___ ___ ___      ,      ___     ___        ___        ___        ___     ___ ,
+    ___ ___ ___ ___ ___ ___      ,      ___     ___        U_MS_U     ___        ___     ___ ,
+    ___ ___ ___ ___ ___ ___      ,      U_WH_L  U_MS_L     U_MS_D     U_MS_R     U_WH_R  ___ ,
+    ___ ___ ___ ___ ___ ___  ___ , ___  ___     &mkp LCLK  &mkp MCLK  &mkp RCLK  ___     ___,
+                ___ ___ ___      ,      U_WH_D  U_WH_U     ___ ,
+    &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
+)
+
 
 /* vim: set ft=c tw=146: */
