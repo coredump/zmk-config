@@ -13,9 +13,9 @@
 
 #include "zmk-helpers/helper.h"
 
-#define KEYS_L LN0 LN1 LN2 LN3 LN4 LN5 LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5 // Left-hand keys.
-#define KEYS_R RN0 RN1 RN2 RN3 RN4 RN5 RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5 // Right-hand keys.
-#define THUMBS LH4 LH3 LH2 LH1 LH0 RH0 RH1 RH2 RH3 RH4                                   // Thumb keys.
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5 LF5 LF4 LF3 LF2 LF1 LF0 LEC // Left-hand keys.
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5 REC RF0 RF1 RF2 RF3 RF4 RF5 // Right-hand keys.
+#define THUMBS LH3 LH2 LH1 LH0 RH0 RH1 RH2 RH3                                    // Thumb keys.
 
 #define BASE 0
 #define LOWER 1
@@ -59,15 +59,14 @@ ZMK_TRI_STATE(
 ZMK_CONDITIONAL_LAYER(adjust, LOWER RAISE, ADJUST)
 
 #ifndef ZMK_BASE_LAYER
-#define ZMK_BASE_LAYER(name, LN, RN, LT, RT, LM, RM, LB, RB, LH, RH, sensors)  \
+#define ZMK_BASE_LAYER(name, LN, RN, LT, RT, LM, RM, LB, RB, LH, RH)  \
     ZMK_LAYER(                                                                 \
         name,                                                                  \
                  LN RN                                                         \
                  LT RT                                                         \
                  LM RM                                                         \
                  LB RB                                                         \
-                 LH &mo LOWER &kp RET &kp SPACE &mo RAISE RH,                  \
-                 sensors                                                       \
+                 LH RH                  \
     )
 #endif
 
@@ -76,17 +75,15 @@ ZMK_BASE_LAYER(Default,
     &kp TAB    &kp Q         &kp W         &kp E         &kp R         &kp T               ,         &kp Y   &kp U         &kp I         &kp O        &kp P           &kp BSPC,
     &kp ESC    &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G               ,         &kp H   &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  &kp SQT,
     &kp LSHFT  &kp Z         &kp X         &kp C         &kp V         &kp B   &kp C_MUTE  , XXX     &kp N   &kp M         &kp COMMA     &kp DOT      &kp FSLH        &kp RSHFT,
-                             &kp LGUI      &kp LALT      &kp LCTRL ,                                         &kp RCTRL     &kp RALT      &kp RGUI,
-    &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
+                             &kp LALT      &kp LCTRL                                       ,                               &kp RCTRL     &kp RALT
 )
 
 ZMK_BASE_LAYER(Lower,
-    ___ ___ ___ ___ ___ ___, ___ ___ ___ ___ ___ ___,
-    &swapper    &kp GRAVE  &kp LESS_THAN  &kp GREATER_THAN         &kp MINUS          &kp PIPE    , &kp CARET  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR      ___            ___,
-    &caps_word  &kp EXCL   &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPS    , &kp HASH   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE  &kp BACKSLASH  ___,
+    ___         ___         ___           ___               ___                ___         , ___        ___                    ___                    ___             ___            ___,
+    &swapper    &kp GRAVE  &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE    , &kp CARET  &kp LEFT_BRACE         &kp RIGHT_BRACE        &kp DOLLAR      ___            ___,
+    &caps_word  &kp EXCL   &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPS    , &kp HASH   &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp UNDERSCORE  &kp BACKSLASH  ___,
     ___         &kp TILDE  &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT ___ , ___    &kp AT_SIGN  &kp COLON ___ ___ ___ ___,
-                ___ ___ ___, ___ ___ ___,
-    &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
+                           ___            ___                                                  ,                     ___       ___
 )
 
 ZMK_BASE_LAYER(Raise,
@@ -94,8 +91,7 @@ ZMK_BASE_LAYER(Raise,
     ___  &kp INS       &kp PSCRN     &kp K_CMENU  ___             &swapper,  &kp PG_UP  ___       &kp UP    ___        ___      &kp F12,
     ___  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL    &kp LEFT_SHIFT  ___     ,  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp DEL  &kp BSPC,
     ___  &kp LC(Z)     &kp LC(X)     &kp LC(C)    &kp LC(V)       ___ ___ ,  ___ ___ ___ ___ ___ ___ ___,
-                       ___  ___ ___, ___ ___ ___,
-        &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
+                       ___ ___, ___ ___
 )
 
 ZMK_BASE_LAYER(Adjust,
@@ -103,8 +99,7 @@ ZMK_BASE_LAYER(Adjust,
     XXX XXX XXX XXX XXX &bootloader, &bootloader XXX XXX XXX XXX XXX,
     XXX XXX XXX XXX XXX &sys_reset, &sys_reset XXX XXX XXX XXX XXX,
     XXX XXX XXX XXX XXX XXX XXX, XXX XXX XXX XXX XXX XXX XXX,
-    XXX XXX XXX, XXX XXX XXX,
-    &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
+    XXX XXX, XXX XXX
 )
 
 ZMK_BASE_LAYER(Mouse,
@@ -112,8 +107,7 @@ ZMK_BASE_LAYER(Mouse,
     ___ ___ ___ ___ ___ ___      ,      ___     ___        U_MS_U     ___        ___     ___ ,
     ___ ___ ___ ___ ___ ___      ,      U_WH_L  U_MS_L     U_MS_D     U_MS_R     U_WH_R  ___ ,
     ___ ___ ___ ___ ___ ___  ___ , ___  ___     &mkp LCLK  &mkp MCLK  &mkp RCLK  ___     ___,
-                ___ ___ ___      ,      U_WH_D  U_WH_U     ___ ,
-    &inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN
+                ___ ___      ,      U_WH_D  U_WH_U
 )
 
 
