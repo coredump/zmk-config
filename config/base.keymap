@@ -45,16 +45,11 @@ ZMK_TRI_STATE(swapper, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
     ignored-key-positions =
-        <LT2 LT3 LH0 LH1 RT2 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RH0 RH1>;
-    ignored-layers = <MOUSE RAISE ADJUST>;)
+        <LT2 LT3 LH1 RT2 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RF1 RF2 RF3 RH1 RH2 RH3>;
+    ignored-layers = <MOUSE LOWER RAISE>;)
 
 #define ___ &trans
 #define XXX &none
-
-// this is needed for the extra wire on nice views
-&nice_view_spi {
-   cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
-};
 
 ZMK_CONDITIONAL_LAYER(adjust, LOWER RAISE, ADJUST)
 
@@ -107,7 +102,7 @@ ZMK_BASE_LAYER(Mouse,
     ___ ___ ___ ___ ___ ___      ,      ___     ___        U_MS_U     ___        ___     ___ ,
     ___ ___ ___ ___ ___ ___      ,      U_WH_L  U_MS_L     U_MS_D     U_MS_R     U_WH_R  ___ ,
     ___ ___ ___ ___ ___ ___  ___ , ___  ___     &mkp LCLK  &mkp MCLK  &mkp RCLK  ___     ___,
-                ___ ___      ,      U_WH_D  U_WH_U
+                ___ ___      ,                  U_WH_D  U_WH_U
 )
 
 

@@ -1,4 +1,5 @@
 .build
+.idea
 .direnv
 .west
 modules
@@ -7,3 +8,4 @@ zephyr
 zmk
 draw/base.yaml
 nice-view-elemental
+nice-*
