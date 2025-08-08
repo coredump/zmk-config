@@ -28,8 +28,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: kevinpastor
       url-base: https://github.com/kevinpastor
-    - name: carrefinho
-      url-base: https://github.com/carrefinho
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
 
   projects:
     - name: zmk
@@ -53,9 +53,9 @@ manifest:
       remote: kevinpastor
       revision: main
 
-    - name: prospector-zmk-module                 # <--- and these
-      remote: carrefinho                          # <---
-      revision: main                              # <---
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: main
 
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
