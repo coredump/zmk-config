@@ -30,6 +30,10 @@ manifest:
       url-base: https://github.com/kevinpastor
     - name: janpfischer
       url-base: https://github.com/janpfischer
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+    - name: coredump
+      url-base: https://github.com/coredump
 
   projects:
     - name: zmk
@@ -42,20 +46,35 @@ manifest:
       path: modules/zmk/adaptive-key
     - name: zmk-auto-layer
       path: modules/zmk/auto-layer
-    - name: zmk-helpers
-      path: modules/zmk/helpers
     - name: zmk-leader-key
       path: modules/zmk/leader-key
     - name: zmk-tri-state
       path: modules/zmk/tri-state
 
+    - name: zmk-helpers
+      remote: coredump
+      revision: lilly-match-labels
+      path: modules/zmk/helpers
+
     - name: nice-view-elemental
       remote: kevinpastor
       revision: main
+      path: modules/nice-view-elemental
 
     - name: zmk-dongle-screen
       remote: janpfischer
       revision: main
+      path: modules/zmk/dongle-screen
+
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
+      path: modules/zmk/rbgled-widget
+
+    - name: zmk-config-totem # modularized totem fork
+      remote: coredump
+      revision: chore/moduled-studiod
+      path: modules/zmk/config-totem
 
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
