@@ -44,9 +44,13 @@ include:
     artifact-name: lily_standalone_right
   - board: seeeduino_xiao_ble
     shield: totem_left rgbled_adapter
+    cmake-args: -DBODGE_COL=y
     artifact-name: totem_left
   - board: seeeduino_xiao_ble
     shield: totem_right rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DBODGE_COL=y
+    snippet: studio-rpc-usb-uart
     artifact-name: totem_right
   - board: seeeduino_xiao_ble
     shield: tester_xiao

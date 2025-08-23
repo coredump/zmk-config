@@ -76,6 +76,12 @@ manifest:
       revision: chore/moduled-studiod
       path: modules/zmk/config-totem
 
+    - name: zmk-lily58-dongle # modularized totem fork
+      remote: coredump
+      revision: main
+      path: modules/zmk/lily58-dongle
+
+
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
     - name: zephyr
