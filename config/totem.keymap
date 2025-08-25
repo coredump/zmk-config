@@ -5,7 +5,7 @@
                  LT RT                                                         \
                  LM RM                                                         \
                  LB RB                                                         \
-                 LH RH                  \
+                 LH &lt TAB LOWER &kp RET &ak_space &lt BSPC RAISE RH          \
     )
 
 #include "zmk-helpers/key-labels/totem.h"

@@ -86,15 +86,15 @@ ZMK_ADAPTIVE_KEY(
 ZMK_BASE_LAYER(Default,
                   &kp Q         &kp W         &kp E         &kp R         &kp T      ,     &kp Y     &kp U         &kp I         &kp O        &kp P           ,
                   &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G      ,     &kp H     &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  ,
-    &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B      ,     &kp N     &kp M         &kp COMMA     &kp DOT      &kp SLASH         XXX,
-                                              &kp LALT      &mo LOWER     &kp RET      ,     &ak_space &mo RAISE     &kp RALT
+    &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B      ,     &kp N     &kp M         &kp COMMA     &kp DOT      &kp SLASH       BSLH  ,
+                                                                          &kp LALT   ,     &kp RALT
 )
 
 ZMK_BASE_LAYER(Gaming,
                   &kp Q         &kp W         &kp E         &kp R         &kp T      ,     &kp Y   &kp U         &kp I         &kp O        &kp P           ,
                   &kp A         &kp S         &kp D         &kp F         &kp G      ,     &kp H   &kp J         &kp K         &kp L        &kp SEMI        ,
-    &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B      ,     &kp N   &kp M         &kp COMMA     &kp DOT      &kp SLASH         XXX,
-                                              &kp LALT      &mo LOWER     &kp RET    ,     &kp SPC &mo RAISE     &kp RALT
+    &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B      ,     &kp N   &kp M         &kp COMMA     &kp DOT      &kp SLASH         BSLH,
+                                                                          &kp LALT   ,     &kp RALT
 )
 
 ZMK_BASE_LAYER(Lower,
@@ -105,17 +105,17 @@ ZMK_BASE_LAYER(Lower,
 )
 
 ZMK_BASE_LAYER(Raise,
-        &kp F1        &kp F2        &kp F3       &kp F4          &kp F5,    &kp F6     &kp F7    &kp F8    &kp F9     &kp F10  ,
-        &kp INS       &kp PSCRN     &kp K_CMENU  &kp LS(TAB)    &swapper,  &kp PG_UP  ___       &kp UP    ___         &kp F11  ,
-    ___ &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL    &kp LEFT_SHIFT &wswapper     ,  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  ___      &kp F12,
-         ___ ___ ___ ___ ___ , ___ ___ ___ ___ ___
+                ___        &kp N1      &kp N2        &kp N3            &kp N4      ,        &kp PG_UP     ___                    &kp UP                 ___              ___,
+                ___        &kp N5      &kp N6        &kp N7            &kp N8      ,        &kp PG_DN     &kp LEFT               &kp DOWN               &kp RIGHT        ___,
+    ___         ___        &kp N9      &kp N0        ___               ___         ,        ___           ___                    ___                    ___              ___   ___,
+                                                                       ___         ,        ___
 )
 
 ZMK_BASE_LAYER(Adjust,
-                &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    , XXX XXX XXX XXX XXX,
-                XXX XXX XXX XXX   &sys_reset, &sys_reset XXX XXX XXX XXX,
-    &bootloader XXX XXX XXX XXX XXX         , XXX XXX XXX XXX XXX &bootloader,
-                            XXX XXX XXX     , XXX XXX XXX
+                ___        &kp F1      &kp F2         &kp F3            &kp F4      ,        &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    ,
+                ___        &kp F5      &kp F6         &kp F7            &kp F8      ,        ___        ___                    ___                    ___              ___,
+    ___         ___        &kp F9      &kp F10        &kp F11           &kp F12     ,        ___        ___                    ___                    ___              ___   ___,
+                                                                        ___         ,        ___
 )
 
 ZMK_BASE_LAYER(Mouse,

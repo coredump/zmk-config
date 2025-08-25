@@ -6,7 +6,7 @@
                  LT RT                                                         \
                  LM RM                                                         \
                  LB RB                                                         \
-                 LH &mo LOWER &kp RET &ak_space &mo RAISE RH                  \
+                 LH &lt TAB LOWER &kp RET &ak_space &lt BSPC RAISE RH                  \
     )
 
 #include "zmk-helpers/key-labels/lily58.h"
