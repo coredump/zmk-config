@@ -1,0 +1,13 @@
+#include "_totem.keymap"
+// bodging this because the pin 0 died
+&kscan0 {
+    row-gpios
+            = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+};
+
+#include "zmk-helpers/key-labels/totem.h"
+#include "base.keymap"

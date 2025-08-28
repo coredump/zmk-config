@@ -34,6 +34,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: coredump
       url-base: https://github.com/coredump
+    - name: joelspadin
+      url-base: https://github.com/joelspadin
 
   projects:
     - name: zmk
@@ -56,6 +58,11 @@ manifest:
       revision: lilly-match-labels
       path: modules/zmk/helpers
 
+    - name: zmk-locales
+      remote: joelspadin
+      revision: main
+      path: modules/zmk/locales
+
     - name: nice-view-elemental
       remote: kevinpastor
       revision: main
@@ -76,10 +83,15 @@ manifest:
       revision: chore/moduled-studiod
       path: modules/zmk/config-totem
 
-    - name: zmk-lily58-dongle # modularized totem fork
+    - name: zmk-lily58-dongle # modularized lily fork
       remote: coredump
       revision: main
       path: modules/zmk/lily58-dongle
+
+    - name: zmk-totem-dongle # modularized lily fork
+      remote: coredump
+      revision: main
+      path: modules/zmk/totem-dongle
 
 
     # Temporarily overload Zephyr until

@@ -3,7 +3,7 @@ parse_config:
     - "modules/zmk/helpers/include"
 
   zmk_preamble: |
-    #include <zmk-helpers/key-labels/lily58.h>
+    #include <zmk-helpers/key-labels/totem.h>
     #define CONFIG_WIRELESS
 
   raw_binding_map:
@@ -11,7 +11,9 @@ parse_config:
     "&bootloader": Boot
     "&caps_word": Caps Word
 
-    "&ak_space": Space
+    "&ind_bat": Bat Level
+
+    "&ak_space": "Space SC"
 
     "&bt BT_SEL 0": BT 1
     "&bt BT_SEL 1": BT 2
@@ -27,9 +29,9 @@ parse_config:
     "&kp LG(LC(LS(A)))": Pin App
     "&kp LG(LC(LS(Q)))": Pin Win
 
-    "&swapper": Next Win
-    "&kp LS(TAB)": Prev Win
-    "&wswapper":  Cycle Tabs
+    "&ctrltab": Next Tab
+    "&win_sw": Next Win
+    "&kp LS(TAB)": Prev Win/Tab
     "&dot_spc": Sentence
     "&num_dance": { "t": "Numword", "s": "Sticky Num" }
     "&magic_shift": { "t": Magic, "h": "Shift" }

@@ -5,8 +5,5 @@
                  LT RT                                                         \
                  LM RM                                                         \
                  LB RB                                                         \
-                 LH &lt TAB LOWER &kp RET &ak_space &lt BSPC RAISE RH          \
+                 LH &lt NAV TAB &lt LOWER RET &lt_spc RAISE 0 &bs_del RH  \
     )
-
-#include "zmk-helpers/key-labels/totem.h"
-#include "base.keymap"

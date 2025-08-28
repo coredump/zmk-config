@@ -87,7 +87,7 @@ draw:
     set -euo pipefail
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/base.keymap" >"{{ draw }}/base.yaml"
     #    yq -Yi '.combos.[].l = ["Combos"]' "{{ draw }}/base.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/base.yaml" -z "lily58" -s Default Lower Raise Mouse >"{{ draw }}/base.svg"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/base.yaml" -z "totem" -s TOTEM Lower Raise Adjust Nav Num Mouse >"{{ draw }}/base.svg"
 
 # initialize west
 init:
