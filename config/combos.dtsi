@@ -23,7 +23,8 @@
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
-ZMK_COMBO(mouse, &smart_mouse,        LT3 LT4,     BASE , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(esc, &kp ESC,        LT3 LT4,       ALL  , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(mouse, &smart_mouse,   LB3 LB4,     BASE , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Horizontal combos - left hand */
 ZMK_COMBO(cut,        &kp LC(X),      LB3 LB1,     BASE,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
@@ -32,7 +33,7 @@ ZMK_COMBO(paste,      &kp LC(V),    LB2 LB1,     BASE,   COMBO_TERM_FAST, COMBO_
 /* Horizontal combos - right hand */
 ZMK_COMBO(quote,      &kp SQT,        RT1 RT2,     BASE,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(dquote,     &kp DQT,        RT2 RT3,     BASE,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(qmark,      &kp QMARK,      RM3 RM4,     BASE,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(qmark,      &kp QMARK,      RB2 RB3,     BASE,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
 /* Vertical combos left hand */
 ZMK_COMBO(backslash,  &kp BACKSLASH,  LT2 LM2,     BASE,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
 /* toggle layers */
@@ -40,7 +41,7 @@ ZMK_COMBO(gaming,     &tog GAMING,    LM2 RM2,     ADJUST, COMBO_TERM_FAST, COMB
 ZMK_COMBO(gaming,     &tog MAC,       LM0 RM0,     ADJUST, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 /* toggle capsword */
 ZMK_COMBO(cword,     &caps_word,      LM1 RM1,     BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(nword,     &smart_num NUM 0,       LM0 RM0,     BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* leader */
 //ZMK_COMBO(lead,     &leader,      RB2 RB3,     BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
-

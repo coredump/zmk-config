@@ -36,6 +36,8 @@ manifest:
       url-base: https://github.com/coredump
     - name: joelspadin
       url-base: https://github.com/joelspadin
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
 
   projects:
     - name: zmk
@@ -55,7 +57,7 @@ manifest:
 
     - name: zmk-helpers
       remote: coredump
-      revision: lilly-match-labels
+      revision: forager-labels
       path: modules/zmk/helpers
 
     - name: zmk-locales
@@ -92,6 +94,11 @@ manifest:
       remote: coredump
       revision: main
       path: modules/zmk/totem-dongle
+
+    - name: forager-zmk-module
+      remote: carrefinho
+      revision: main
+      path: modules/forager-zmk-module
 
 
     # Temporarily overload Zephyr until
