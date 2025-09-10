@@ -85,9 +85,15 @@ clean-nix:
 draw:
     #!/usr/bin/env bash
     set -euo pipefail
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/base.keymap" >"{{ draw }}/base.yaml"
-    #    yq -Yi '.combos.[].l = ["Combos"]' "{{ draw }}/base.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/base.yaml" -z "forager" -s Base Lower Raise Adjust Nav Num Mouse >"{{ draw }}/base.svg"
+    # lily
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/lily58.keymap" >"{{ draw }}/lily58.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/lily58.yaml" >"{{ draw }}/lily58.svg"
+    # totem
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/totem_left.keymap" >"{{ draw }}/totem.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw -z "totem" "{{ draw }}/totem.yaml" >"{{ draw }}/totem.svg"
+    # forager
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/forager.keymap" >"{{ draw }}/forager.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw -z "forager" "{{ draw }}/forager.yaml" >"{{ draw }}/forager.svg"
 
 # initialize west
 init:

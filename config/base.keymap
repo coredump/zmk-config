@@ -78,6 +78,11 @@ ZMK_TRI_STATE(win_sw, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 ZMK_TRI_STATE(ctrltab, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>; )
 
+// Hack: Make HRM combos tap-only (cf, ZMK issue #544).
+#define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
+  MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
+  ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
+
 #include "combos.dtsi"
 #include "leader.dtsi"
 #include "mouse.dtsi"
@@ -125,10 +130,10 @@ ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&ak_space>; flavor = "balanced";
 
 
 ZMK_BASE_LAYER(Base,
-                  &kp Q         &kp W         &kp E         &kp R         &kp T      ,     &kp Y     &kp U         &kp I         &kp O        &kp P           ,
-                  &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F  &kp G      ,     &kp H     &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  ,
-    			  &kp Z         &kp X         &kp C         &kp V         &kp B      ,     &kp N     &kp M         &kp COMMA     &kp DOT      &kp SLASH       ,
-                                                            &lt NAV TAB   &lt LOWER RET,   &lt_spc RAISE 0 &bs_del
+                  &kp Q         &kp W         &kp E         &kp R           &kp T      ,     &kp Y     &kp U         &kp I         &kp O        &kp P           ,
+                  &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F    &kp G      ,     &kp H     &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  ,
+    			  &kp Z         &kp X         &kp C         &kp V           &kp B      ,     &kp N     &kp M         &kp COMMA     &kp DOT      &kp SLASH       ,
+                                                            &lt LOWER TAB   &lt NAV RET,     &ak_space LT_BSDEL
 )
 
 ZMK_BASE_LAYER(MacOS,
@@ -142,7 +147,7 @@ ZMK_BASE_LAYER(Gaming,
                   ___           ___           ___           ___           ___        ,     ___       ___           ___           ___          ___        ,
                   &kp A         &kp S         &kp D         &kp F         &kp G      ,     &kp H   &kp J         &kp K         &kp L        &kp SEMI        ,
                   ___           ___           ___           ___           ___        ,     ___       ___           ___           ___          ___           ,
-                                                            &lt NAV TAB   &lt LOWER RET,   &lt_spc RAISE 0 &bs_del
+                                                            &lt LOWER TAB   &lt NAV RET,   &ak_space LT_BSDEL
 )
 
 ZMK_BASE_LAYER(Lower,
@@ -181,7 +186,7 @@ ZMK_BASE_LAYER(Num,
 )
 
 ZMK_BASE_LAYER(Nav,
-                ___        ___         &kp LS(TAB)   &win_sw           &ctrltab    ,        &kp PG_UP     &kp HOME               &kp UP                 &kp END          ___,
+                ___        ___         &kp LS(TAB)   &ctrltab    &win_sw           ,        &kp PG_UP     &kp HOME               &kp UP                 &kp END          ___,
                 ___        ___         ___           ___               ___         ,        &kp PG_DN     &kp LEFT               &kp DOWN               &kp RIGHT        ___,
                 PM_KEY     ___         ___           ___               ___         ,        ___           ___                    ___                    ___              ___      ,
                                                             ___           ___        ,     ___       ___

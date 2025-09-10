@@ -4,6 +4,8 @@
         name,                                                                  \
                  LT RT                                                         \
                  LM RM                                                         \
-                 LB RB                                                         \
-                 LH &lt NAV TAB &lt LOWER RET &lt_spc RAISE 0 &bs_del RH  \
+                 &kp ESC LB RB &kp BSLH                                        \
+                 SMART_NUM LH RH  &none \
     )
+
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                    // Thumb keys.

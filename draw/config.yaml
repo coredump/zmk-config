@@ -39,6 +39,7 @@ parse_config:
     "&smart_mouse": Smart Mouse
 
     "&soft_off": Turn Off
+    "&esc": ESC
 
     "&hml LS(LALT)TAB": Tab
     "&hm_combo_ldr": Leader

@@ -23,7 +23,15 @@
 #define COMBO_IDLE_FAST 150
 #define COMBO_IDLE_SLOW 50
 
-ZMK_COMBO(esc, &kp ESC,        LT3 LT4,       ALL  , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+// Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
+// chording of mods. Custom hold-tap instances can be bootstrapped on the go using the
+// 8-argument version of ZMK_COMBO defined in base.keymap.
+ZMK_MACRO(esc, bindings = <&kp ESC>;) // target of the combo can't be a kp
+
+ZMK_COMBO(esc,  &esc,      RM2 RM1,     BASE NAV NUM, COMBO_TERM_FAST, COMBO_IDLE_FAST, RS(RCTRL), KEYS_L)
+ZMK_COMBO(cword,&caps_word,      LM1 RM1,     BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(RSFT), KEYS_L KEYS_R)
+
+
 ZMK_COMBO(mouse, &smart_mouse,   LB3 LB4,     BASE , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Horizontal combos - left hand */
@@ -40,7 +48,6 @@ ZMK_COMBO(backslash,  &kp BACKSLASH,  LT2 LM2,     BASE,   COMBO_TERM_FAST, COMB
 ZMK_COMBO(gaming,     &tog GAMING,    LM2 RM2,     ADJUST, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(gaming,     &tog MAC,       LM0 RM0,     ADJUST, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 /* toggle capsword */
-ZMK_COMBO(cword,     &caps_word,      LM1 RM1,     BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(nword,     &smart_num NUM 0,       LM0 RM0,     BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* leader */

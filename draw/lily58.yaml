@@ -1,0 +1,575 @@
+layout: {zmk_keyboard: lily58}
+layers:
+  Base:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - Bspc
+  - Esc
+  - {t: A, h: Gui}
+  - {t: S, h: Alt}
+  - {t: D, h: Ctrl}
+  - {t: F, h: Shift}
+  - G
+  - H
+  - {t: J, h: Shift}
+  - {t: K, h: Ctrl}
+  - {t: L, h: Alt}
+  - {t: ;, h: Gui}
+  - ''''
+  - LSFT
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - ''
+  - ''
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: Tab, h: Lower}
+  - {t: Enter, h: Nav}
+  - Space SC
+  - {t: Bspc, h: Raise, s: Del}
+  - ''
+  - ''
+  MacOS:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Bspc
+  - Esc
+  - {t: A, h: Ctrl}
+  - {type: trans}
+  - {t: D, h: Gui}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: K, h: Gui}
+  - {type: trans}
+  - {t: ;, h: Gui}
+  - ''''
+  - LSFT
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  Gaming:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Bspc
+  - Esc
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - ''''
+  - LSFT
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: Tab, h: Lower}
+  - {t: Enter, h: Nav}
+  - Space SC
+  - {t: Bspc, h: Raise, s: Del}
+  - ''
+  - ''
+  Lower:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - '`'
+  - <
+  - '>'
+  - '-'
+  - '|'
+  - ^
+  - '{'
+  - '}'
+  - $
+  - {type: trans}
+  - Bspc
+  - Esc
+  - '!'
+  - '*'
+  - /
+  - '='
+  - '&'
+  - '#'
+  - (
+  - )
+  - _
+  - ''''
+  - ''''
+  - LSFT
+  - '~'
+  - +
+  - '['
+  - ']'
+  - '%'
+  - ''
+  - ''
+  - '@'
+  - ':'
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  Raise:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - {type: trans}
+  - F9
+  - F10
+  - F11
+  - F12
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - Bspc
+  - Esc
+  - {type: trans}
+  - F5
+  - F6
+  - F7
+  - F8
+  - PgDn
+  - ←
+  - ↓
+  - →
+  - {type: trans}
+  - ''''
+  - LSFT
+  - {type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - ''
+  - ''
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - ''
+  - ''
+  Adjust:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - BT CLR
+  - BT 1
+  - BT 2
+  - BT 3
+  - BT 4
+  - Bspc
+  - Esc
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''''
+  - LSFT
+  - Boot
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  - Bat Level
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Boot
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - ''
+  - ''
+  Mouse:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Scroll ↑
+  - Mouse ↑
+  - Scroll ↓
+  - {type: trans}
+  - Bspc
+  - Esc
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Scroll ←
+  - Mouse ←
+  - Mouse ↓
+  - Mouse →
+  - Scroll →
+  - ''''
+  - LSFT
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  - {type: trans}
+  - Left Click
+  - Middle Click
+  - Right Click
+  - {type: trans}
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - CANCEL
+  - ''
+  - ''
+  Num:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - '7'
+  - '8'
+  - '9'
+  - {type: trans}
+  - Bspc
+  - Esc
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - '0'
+  - '4'
+  - '5'
+  - '6'
+  - {type: trans}
+  - ''''
+  - LSFT
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  - .
+  - '1'
+  - '2'
+  - '3'
+  - {type: trans}
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num, type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - CANCEL
+  - ''
+  - ''
+  Nav:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - {type: trans}
+  - {type: trans}
+  - Prev Win/Tab
+  - Next Tab
+  - Next Win
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - Bspc
+  - Esc
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - PgDn
+  - ←
+  - ↓
+  - →
+  - {type: trans}
+  - ''''
+  - LSFT
+  - Turn Off
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+combos:
+- p: [32, 31]
+  k: {t: ESC, h: Sft+Ctrl}
+  l: [Base, Nav, Num]
+- p: [28, 31]
+  k: {t: Caps Word, h: Sft+RSFT}
+  l: [Base]
+- p: [38, 37]
+  k: Smart Mouse
+  l: [Base]
+- p: [38, 40]
+  k: Cut
+  l: [Base]
+  a: bottom
+  o: 0.15
+- p: [38, 39]
+  k: Ctl+C
+  l: [Base]
+- p: [39, 40]
+  k: Ctl+V
+  l: [Base]
+- p: [19, 20]
+  k: ''''
+  l: [Base]
+- p: [20, 21]
+  k: '"'
+  l: [Base]
+- p: [46, 47]
+  k: '?'
+  l: [Base]
+- p: [15, 27]
+  k: \
+  l: [Base]
+- p: [27, 32]
+  k: {t: Gaming, h: toggle}
+  l: [Adjust]
+- p: [29, 30]
+  k: {t: MacOS, h: toggle}
+  l: [Adjust]
+- p: [29, 30]
+  k: {t: Numword, h: Num, s: Sticky Num}
+  l: [Base]
