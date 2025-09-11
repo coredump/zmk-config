@@ -113,7 +113,7 @@ layers:
   - ''
   - {t: Numword, h: Num, s: Sticky Num}
   - {type: trans}
-  - {type: trans}
+  - {t: Enter, h: MacNav}
   - {type: trans}
   - {type: trans}
   - ''
@@ -427,16 +427,16 @@ layers:
   - '0'
   - Bspc
   - Tab
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
   - '7'
   - '8'
   - '9'
-  - {type: trans}
+  - '0'
   - Bspc
   - Esc
   - {type: trans}
@@ -444,10 +444,10 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - '0'
-  - '4'
-  - '5'
-  - '6'
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - {type: trans}
   - ''''
   - LSFT
@@ -458,10 +458,10 @@ layers:
   - {type: trans}
   - ''
   - ''
-  - .
-  - '1'
-  - '2'
-  - '3'
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - {type: trans}
   - RSFT
   - ''
@@ -486,7 +486,7 @@ layers:
   - '0'
   - Bspc
   - Tab
-  - {type: trans}
+  - '&win_lock'
   - {type: trans}
   - Prev Win/Tab
   - Next Tab
@@ -502,7 +502,66 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
+  - '&win_prsc'
+  - PgDn
+  - ←
+  - ↓
+  - →
   - {type: trans}
+  - ''''
+  - LSFT
+  - Turn Off
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - RSFT
+  - ''
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  - ''
+  MacNav:
+  - '`'
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - Bspc
+  - Tab
+  - '&mac_lock'
+  - {type: trans}
+  - Prev Win/Tab
+  - Next Tab
+  - '&mac_sw'
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - Bspc
+  - Esc
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - '&mac_prsc'
   - PgDn
   - ←
   - ↓
@@ -534,36 +593,36 @@ layers:
 combos:
 - p: [32, 31]
   k: {t: ESC, h: Sft+Ctrl}
-  l: [Base, Nav, Num]
+  l: [Base, Nav, Num, MacOS, Gaming]
 - p: [28, 31]
   k: {t: Caps Word, h: Sft+RSFT}
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [38, 37]
   k: Smart Mouse
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [38, 40]
   k: Cut
-  l: [Base]
+  l: [Base, Gaming]
   a: bottom
   o: 0.15
 - p: [38, 39]
   k: Ctl+C
-  l: [Base]
+  l: [Base, Gaming]
 - p: [39, 40]
   k: Ctl+V
-  l: [Base]
+  l: [Base, Gaming]
 - p: [19, 20]
   k: ''''
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [20, 21]
   k: '"'
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [46, 47]
   k: '?'
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [15, 27]
   k: \
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [27, 32]
   k: {t: Gaming, h: toggle}
   l: [Adjust]
@@ -572,4 +631,4 @@ combos:
   l: [Adjust]
 - p: [29, 30]
   k: {t: Numword, h: Num, s: Sticky Num}
-  l: [Base]
+  l: [Base, MacOS, Gaming]

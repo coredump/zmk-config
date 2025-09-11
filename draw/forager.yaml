@@ -67,7 +67,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
+  - {t: Enter, h: MacNav}
   - {type: trans}
   - {type: trans}
   Gaming:
@@ -246,42 +246,42 @@ layers:
   - {type: trans}
   - CANCEL
   Num:
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
   - '7'
   - '8'
   - '9'
-  - {type: trans}
+  - '0'
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: held}
-  - {t: '0', type: held}
-  - '4'
-  - '5'
-  - '6'
+  - {type: held}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - .
-  - '1'
-  - '2'
-  - '3'
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - CANCEL
   Nav:
-  - {type: trans}
+  - '&win_lock'
   - {type: trans}
   - Prev Win/Tab
   - Next Tab
@@ -295,7 +295,42 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
+  - '&win_prsc'
+  - PgDn
+  - ←
+  - ↓
+  - →
   - {type: trans}
+  - Turn Off
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  MacNav:
+  - '&mac_lock'
+  - {type: trans}
+  - Prev Win/Tab
+  - Next Tab
+  - '&mac_sw'
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - '&mac_prsc'
   - PgDn
   - ←
   - ↓
@@ -318,36 +353,36 @@ layers:
 combos:
 - p: [17, 16]
   k: {t: ESC, h: Sft+Ctrl}
-  l: [Base, Nav, Num]
+  l: [Base, Nav, Num, MacOS, Gaming]
 - p: [13, 16]
   k: {t: Caps Word, h: Sft+RSFT}
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [21, 20]
   k: Smart Mouse
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [21, 23]
   k: Cut
-  l: [Base]
+  l: [Base, Gaming]
   a: bottom
   o: 0.15
 - p: [21, 22]
   k: Ctl+C
-  l: [Base]
+  l: [Base, Gaming]
 - p: [22, 23]
   k: Ctl+V
-  l: [Base]
+  l: [Base, Gaming]
 - p: [6, 7]
   k: ''''
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [7, 8]
   k: '"'
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [27, 28]
   k: '?'
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [2, 12]
   k: \
-  l: [Base]
+  l: [Base, MacOS, Gaming]
 - p: [12, 17]
   k: {t: Gaming, h: toggle}
   l: [Adjust]
@@ -356,4 +391,4 @@ combos:
   l: [Adjust]
 - p: [14, 15]
   k: {t: Numword, h: Num, s: Sticky Num}
-  l: [Base]
+  l: [Base, MacOS, Gaming]

@@ -50,6 +50,7 @@
 #define MOUSE 6
 #define NUM 7
 #define NAV 8
+#define MACNAV 9
 
 #define QUICK_TAP_MS 175
 
@@ -75,8 +76,17 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 ZMK_TRI_STATE(win_sw, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
               ignored-key-positions = <LT2 RM2 RB1 RB2 RB3>; )
 
+ZMK_TRI_STATE(mac_sw, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
+              ignored-key-positions = <LT2 RM2 RB1 RB2 RB3>; )
+
 ZMK_TRI_STATE(ctrltab, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>; )
+
+ZMK_MACRO(win_lock, bindings = < &kp LG(L) >;)
+ZMK_MACRO(mac_lock, bindings = < &kp LG(LC(Q))  >;)
+
+ZMK_MACRO(win_prsc, bindings = < &kp LG(LS(S)) >;)
+ZMK_MACRO(mac_prsc, bindings = < &kp LG(LS(N4)) >;)
 
 // Hack: Make HRM combos tap-only (cf, ZMK issue #544).
 #define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
@@ -86,7 +96,6 @@ ZMK_TRI_STATE(ctrltab, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
 #include "combos.dtsi"
 #include "leader.dtsi"
 #include "mouse.dtsi"
-
 
 ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
@@ -140,7 +149,7 @@ ZMK_BASE_LAYER(MacOS,
                   ___           ___           ___           ___           ___        ,     ___       ___           ___           ___          ___        ,
                   &hml LCTRL A  ___           &hml LGUI D   ___           ___        ,     ___       ___           &hmr RGUI K   ___          &hmr RGUI SEMI  ,
                   ___           ___           ___           ___           ___        ,     ___       ___           ___           ___          ___           ,
-                                                            ___           ___        ,     ___       ___
+                                                            ___           &lt MACNAV RET        ,     ___           ___
 )
 
 ZMK_BASE_LAYER(Gaming,
@@ -179,15 +188,22 @@ ZMK_BASE_LAYER(Mouse,
 )
 
 ZMK_BASE_LAYER(Num,
-        ___    ___    ___    ___    ___     ,    ___       &kp N7    &kp N8    &kp N9    ___        ,
-        ___    ___    ___    ___    ___     ,    &kp N0    &kp N4    &kp N5    &kp N6    ___        ,
-        ___    ___    ___    ___    ___     ,    &kp DOT   &kp N1    &kp N2    &kp N3    ___        ,
+        &kp N1 &kp N2 &kp N3 &kp N4 &kp N5  ,    &kp N6      &kp N7    &kp N8    &kp N9    &kp N0        ,
+        ___    ___    ___    ___    ___     ,    ___         ___       ___       ___       ___        ,
+        ___    ___    ___    ___    ___     ,    ___         ___       ___       ___       ___        ,
                       ___           ___     ,    ___       CANCEL
 )
 
 ZMK_BASE_LAYER(Nav,
-                ___        ___         &kp LS(TAB)   &ctrltab    &win_sw           ,        &kp PG_UP     &kp HOME               &kp UP                 &kp END          ___,
-                ___        ___         ___           ___               ___         ,        &kp PG_DN     &kp LEFT               &kp DOWN               &kp RIGHT        ___,
+                &win_lock  ___         &kp LS(TAB)   &ctrltab    &win_sw           ,        &kp PG_UP     &kp HOME               &kp UP                 &kp END          ___,
+                ___        ___         ___           ___               &win_prsc        ,        &kp PG_DN     &kp LEFT               &kp DOWN               &kp RIGHT        ___,
+                PM_KEY     ___         ___           ___               ___         ,        ___           ___                    ___                    ___              ___      ,
+                                                            ___           ___        ,     ___       ___
+)
+
+ZMK_BASE_LAYER(MacNav,
+                &mac_lock  ___         &kp LS(TAB)   &ctrltab    &mac_sw           ,        &kp PG_UP     &kp HOME               &kp UP                 &kp END          ___,
+                ___        ___         ___           ___               &mac_prsc      ,        &kp PG_DN     &kp LEFT               &kp DOWN               &kp RIGHT        ___,
                 PM_KEY     ___         ___           ___               ___         ,        ___           ___                    ___                    ___              ___      ,
                                                             ___           ___        ,     ___       ___
 )
