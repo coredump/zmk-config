@@ -87,13 +87,13 @@ draw:
     set -euo pipefail
     # lily
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/lily58.keymap" >"{{ draw }}/lily58.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/lily58.yaml" >"{{ draw }}/lily58.svg"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/lily58.yaml" -s Base Lower Raise Adjust Nav >"{{ draw }}/lily58.svg"
     # totem
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/totem_left.keymap" >"{{ draw }}/totem.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw -z "totem" "{{ draw }}/totem.yaml" >"{{ draw }}/totem.svg"
+    keymap -c "{{ draw }}/config.yaml" draw -z "totem" "{{ draw }}/totem.yaml" -s Base Lower Raise Adjust Nav >"{{ draw }}/totem.svg"
     # forager
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/forager.keymap" >"{{ draw }}/forager.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw -z "forager" "{{ draw }}/forager.yaml" >"{{ draw }}/forager.svg"
+    keymap -c "{{ draw }}/config.yaml" draw -z "forager" "{{ draw }}/forager.yaml" -s Base Lower Raise Adjust Nav > "{{ draw }}/forager.svg"
 
 # initialize west
 init:

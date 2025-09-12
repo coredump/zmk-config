@@ -6,7 +6,7 @@
          &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5    &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSPC  \
          &kp TAB   LT RT &kp BSPC                                                         \
          &kp ESC   LM RM &kp SQT                                                         \
-         &kp LSFT  LB &none &none RB &kp RSFT                                                         \
+         &kp LCTRL LB &none &none RB &kp RSFT                                                         \
                 &none SMART_NUM LH RH &none &none                  \
     )
 
