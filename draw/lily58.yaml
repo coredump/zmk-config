@@ -325,7 +325,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
+  - {t: MacOS, h: toggle}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -337,7 +337,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
+  - {t: Gaming, h: toggle}
   - ''
   - ''
   - Bat Level
@@ -409,8 +409,8 @@ layers:
   - {t: Numword, h: Num, s: Sticky Num}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
   - CANCEL
+  - {type: trans}
   - ''
   - ''
   Num:
@@ -468,8 +468,8 @@ layers:
   - {t: Numword, h: Num, s: Sticky Num, type: held}
   - {type: trans}
   - {type: trans}
-  - {type: trans}
   - CANCEL
+  - {type: trans}
   - ''
   - ''
   Nav:
@@ -611,6 +611,15 @@ combos:
 - p: [39, 40]
   k: Ctl+V
   l: [Base, Gaming]
+- p: [38, 40]
+  k: Gui+X
+  l: [MacOS]
+- p: [38, 39]
+  k: Gui+C
+  l: [MacOS]
+- p: [39, 40]
+  k: Gui+V
+  l: [MacOS]
 - p: [19, 20]
   k: ''''
   l: [Base, MacOS, Gaming]
@@ -623,12 +632,6 @@ combos:
 - p: [15, 27]
   k: \
   l: [Base, MacOS, Gaming]
-- p: [27, 32]
-  k: {t: Gaming, h: toggle}
-  l: [Adjust]
-- p: [29, 30]
-  k: {t: MacOS, h: toggle}
-  l: [Adjust]
 - p: [29, 30]
   k: {t: Numword, h: Num, s: Sticky Num}
   l: [Base, MacOS, Gaming]

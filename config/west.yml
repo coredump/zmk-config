@@ -40,6 +40,12 @@ manifest:
       url-base: https://github.com/carrefinho
     - name: prospector
       url-base: https://github.com/t-ogura
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
+    - name: vloth
+      url-base: https://github.com/vloth
+    - name: badjeff
+      url-base: https://github.com/badjeff
 
   projects:
     - name: zmk
@@ -92,7 +98,12 @@ manifest:
       revision: main
       path: modules/zmk/lily58-dongle
 
-    - name: zmk-totem-dongle # modularized lily fork
+    - name: charybdis-wireless-mini-zmk-firmware
+      remote: coredump
+      revision: main
+      path: modules/zmk/charybdis-wireless-mini-zmk-firmware
+
+    - name: zmk-totem-dongle
       remote: coredump
       revision: main
       path: modules/zmk/totem-dongle
@@ -107,6 +118,20 @@ manifest:
       revision: v1.1.1
       path: modules/prospector-zmk-module
 
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: main
+      path: modules/zmk/nice-oled
+
+    - name: zmk-keyboard-charybdis-nano
+      remote: coredump
+      revision: main
+      path: modules/zmk/keyboard-charybdis-nano
+
+    - name: zmk-pmw3610-driver
+      remote: badjeff
+      revision: main
+      path: modules/zmk/pwm3610-driver
 
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.

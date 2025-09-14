@@ -671,8 +671,10 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(196, 94)" class="key trans keypos-13">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 </g>
-<g transform="translate(252, 100)" class="key trans keypos-14">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<g transform="translate(252, 100)" class="key keypos-14">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">MacOS</text>
+<text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(448, 100)" class="key trans keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -702,8 +704,10 @@ path.combo { stroke: #7f7f7f; }
 <g transform="translate(196, 150)" class="key trans keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
 </g>
-<g transform="translate(252, 156)" class="key trans keypos-24">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
+<g transform="translate(252, 156)" class="key keypos-24">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
+<text x="0" y="0" class="key tap">Gaming</text>
+<text x="0" y="24" class="key hold">toggle</text>
 </g>
 <g transform="translate(448, 156)" class="key keypos-25">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -735,20 +739,6 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(448, 224) rotate(-25.0)" class="key held keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held"/>
-</g>
-<g class="combo combopos-0">
-<path d="M350,84 l-191,0" class="combo"/>
-<path d="M350,84 l191,0" class="combo"/>
-<rect rx="6" ry="6" x="336" y="71" width="28" height="26" class="combo"/>
-<text x="350" y="84" class="combo tap">Gaming</text>
-<text x="350" y="95" class="combo hold">toggle</text>
-</g>
-<g class="combo combopos-1">
-<path d="M350,100 l-79,0" class="combo"/>
-<path d="M350,100 l79,0" class="combo"/>
-<rect rx="6" ry="6" x="336" y="87" width="28" height="26" class="combo"/>
-<text x="350" y="100" class="combo tap">MacOS</text>
-<text x="350" y="111" class="combo hold">toggle</text>
 </g>
 </g>
 </g>

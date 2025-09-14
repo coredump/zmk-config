@@ -137,73 +137,72 @@ ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&ak_space>; flavor = "balanced";
       ZMK_LAYER(name, LT RT LM RM LB RB LH RH)
 #endif
 
-
 ZMK_BASE_LAYER(Base,
-                  &kp Q         &kp W         &kp E         &kp R           &kp T      ,     &kp Y     &kp U         &kp I         &kp O        &kp P           ,
-                  &hml LGUI A   &hml LALT S   &hml LCTRL D  &hml LSHFT F    &kp G      ,     &kp H     &hmr RSHFT J  &hmr RCTRL K  &hmr RALT L  &hmr RGUI SEMI  ,
-    			  &kp Z         &kp X         &kp C         &kp V           &kp B      ,     &kp N     &kp M         &kp COMMA     &kp DOT      &kp SLASH       ,
-                                                            &lt LOWER TAB   &lt NAV RET,     &ak_space LT_BSDEL
+    &kp Q           &kp W           &kp E            &kp R             &kp T         ,    &kp Y          &kp U           &kp I            &kp O            &kp P            ,
+    &hml LGUI A     &hml LALT S     &hml LCTRL D     &hml LSHFT F      &kp G         ,    &kp H          &hmr RSHFT J    &hmr RCTRL K     &hmr RALT L      &hmr RGUI SEMI   ,
+    &kp Z           &kp X           &kp C            &kp V             &kp B         ,    &kp N          &kp M           &kp COMMA        &kp DOT          &kp SLASH        ,
+                                                     &lt LOWER TAB     &lt NAV RET   ,    &ak_space      LT_BSDEL
 )
 
 ZMK_BASE_LAYER(MacOS,
-                  ___           ___           ___           ___           ___        ,     ___       ___           ___           ___          ___        ,
-                  &hml LCTRL A  ___           &hml LGUI D   ___           ___        ,     ___       ___           &hmr RGUI K   ___          &hmr RGUI SEMI  ,
-                  ___           ___           ___           ___           ___        ,     ___       ___           ___           ___          ___           ,
-                                                            ___           &lt MACNAV RET        ,     ___           ___
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    &hml LCTRL A    ___             &hml LGUI D      ___               ___           ,    ___            ___             &hmr RGUI K      ___              &hmr RGUI SEMI   ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+                                                     ___               &lt MACNAV RET,    ___            ___
 )
 
 ZMK_BASE_LAYER(Gaming,
-                  ___           ___           ___           ___           ___        ,     ___       ___           ___           ___          ___        ,
-                  &kp A         &kp S         &kp D         &kp F         &kp G      ,     &kp H   &kp J         &kp K         &kp L        &kp SEMI        ,
-                  ___           ___           ___           ___           ___        ,     ___       ___           ___           ___          ___           ,
-                                                            &lt LOWER TAB   &lt NAV RET,   &ak_space LT_BSDEL
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    &kp A           &kp S           &kp D            &kp F             &kp G         ,    &kp H          &kp J           &kp K            &kp L            &kp SEMI         ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+                                                     &lt LOWER TAB     &lt NAV RET   ,    &ak_space      LT_BSDEL
 )
 
 ZMK_BASE_LAYER(Lower,
-                &kp GRAVE  &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE    , &kp CARET  &kp LEFT_BRACE         &kp RIGHT_BRACE        &kp DOLLAR       ___,
-                &kp EXCL   &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPS    , &kp HASH   &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS  &kp UNDERSCORE  &kp SQT,
-                &kp TILDE  &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT , &kp AT_SIGN  &kp COLON ___ ___ ___    ,
-                                                            ___           ___        ,     ___       ___
+    &kp GRAVE       &kp LESS_THAN   &kp GREATER_THAN &kp MINUS         &kp PIPE      ,    &kp CARET      &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DOLLAR       ___              ,
+    &kp EXCL        &kp ASTERISK    &kp SLASH        &kp EQUAL         &kp AMPS      ,    &kp HASH       &kp LPAR        &kp RPAR         &kp UNDERSCORE   &kp SQT          ,
+    &kp TILDE       &kp PLUS        &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp PERCENT   ,    &kp AT_SIGN    &kp COLON       ___              ___              ___              ,
+                                                     ___                ___          ,    ___            ___
 )
 
 ZMK_BASE_LAYER(Raise,
-                ___        &kp F9      &kp F10        &kp F11           &kp F12         ,        &kp PG_UP     &kp HOME               &kp UP                 &kp END          ___,
-                ___        &kp F5      &kp F6         &kp F7            &kp F8          ,        &kp PG_DN     &kp LEFT               &kp DOWN               &kp RIGHT        ___,
-                ___        &kp F1      &kp F2         &kp F3            &kp F4          ,        ___           ___                    ___                    ___              ___   ,
-                                                            ___           ___        ,     ___       ___
+    ___             &kp F9          &kp F10          &kp F11           &kp F12       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
+    ___             &kp F5          &kp F6           &kp F7            &kp F8        ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
+    ___             &kp F1          &kp F2           &kp F3            &kp F4        ,    ___            ___             ___              ___              ___              ,
+                                                     ___               ___           ,    ___            ___
 )
 
 ZMK_BASE_LAYER(Adjust,
-                ___       ___		  ___            ___                ___             ,        &bt BT_CLR        &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    ,
-                ___       ___         ___            ___                ___             ,        ___        ___                    ___                    ___              ___,
-                &bootloader		  ___         ___            ___        ___          ,        &ind_bat   ___                    ___                    ___              &bootloader,
-                                                            ___           ___        ,     ___       ___
+    ___             ___             ___              ___               ___           ,    &bt BT_CLR     &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     ,
+    ___             ___             ___              ___               &tog MAC      ,    ___            ___             ___              ___              ___              ,
+    &bootloader     ___             ___              ___               &tog GAMING   ,    &ind_bat       ___             ___              ___              &bootloader      ,
+                                                     ___               ___           ,    ___            ___
 )
 
 ZMK_BASE_LAYER(Mouse,
-        ___ ___ ___ ___ ___  ,  ___      U_WH_U     U_MS_U     U_WH_D     ___     ,
-        ___ ___ ___ ___ ___  ,  U_WH_L   U_MS_L     U_MS_D     U_MS_R     U_WH_R  ,
-        ___ ___ ___ ___ ___  ,  ___      &mkp LCLK  &mkp MCLK  &mkp RCLK  ___     ,
-                       ___           ___        ,     ___      CANCEL
+    ___             ___             ___              ___               ___           ,    ___            U_WH_U          U_MS_U           U_WH_D           ___              ,
+    ___             ___             ___              ___               ___           ,    U_WH_L         U_MS_L          U_MS_D           U_MS_R           U_WH_R           ,
+    ___             ___             ___              ___               ___           ,    ___            &mkp LCLK       &mkp MCLK        &mkp RCLK        ___              ,
+                                                     ___               ___           ,    CANCEL         ___
 )
 
 ZMK_BASE_LAYER(Num,
-        &kp N1 &kp N2 &kp N3 &kp N4 &kp N5  ,    &kp N6      &kp N7    &kp N8    &kp N9    &kp N0        ,
-        ___    ___    ___    ___    ___     ,    ___         ___       ___       ___       ___        ,
-        ___    ___    ___    ___    ___     ,    ___         ___       ___       ___       ___        ,
-                      ___           ___     ,    ___       CANCEL
+    &kp N1          &kp N2          &kp N3           &kp N4            &kp N5        ,    &kp N6         &kp N7          &kp N8           &kp N9           &kp N0           ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+                                                     ___               ___           ,    CANCEL         ___
 )
 
 ZMK_BASE_LAYER(Nav,
-                &win_lock  ___         &kp LS(TAB)   &ctrltab    &win_sw           ,        &kp PG_UP     &kp HOME               &kp UP                 &kp END          ___,
-                ___        ___         ___           ___               &win_prsc        ,        &kp PG_DN     &kp LEFT               &kp DOWN               &kp RIGHT        ___,
-                PM_KEY     ___         ___           ___               ___         ,        ___           ___                    ___                    ___              ___      ,
-                                                            ___           ___        ,     ___       ___
+    &win_lock       ___             &kp LS(TAB)      &ctrltab          &win_sw       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
+    ___             ___             ___              ___               &win_prsc     ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
+    PM_KEY          ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+                                                     ___               ___           ,    ___            ___
 )
 
 ZMK_BASE_LAYER(MacNav,
-                &mac_lock  ___         &kp LS(TAB)   &ctrltab    &mac_sw           ,        &kp PG_UP     &kp HOME               &kp UP                 &kp END          ___,
-                ___        ___         ___           ___               &mac_prsc      ,        &kp PG_DN     &kp LEFT               &kp DOWN               &kp RIGHT        ___,
-                PM_KEY     ___         ___           ___               ___         ,        ___           ___                    ___                    ___              ___      ,
-                                                            ___           ___        ,     ___       ___
+    &mac_lock       ___             &kp LS(TAB)      &ctrltab          &mac_sw       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
+    ___             ___             ___              ___               &mac_prsc     ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
+    PM_KEY          ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+                                                     ___               ___           ,    ___            ___
 )

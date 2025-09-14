@@ -1,4 +1,4 @@
-g This file generates the GitHub Actions matrix
+# This file generates the GitHub Actions matrix
 # For simple board + shield combinations, add them
 # to the top level board and shield arrays, for more
 # control, add individual board + shield combinations to
@@ -21,11 +21,14 @@ include:
   - board: seeeduino_xiao_ble
     shield: tester_xiao
   - board: nice_nano_v2
+    shield: tester_pro_micro
+  - board: nice_nano_v2
     shield: settings_reset
     artifact-name: nice_nano_reset
   - board: seeeduino_xiao_ble
     shield: settings_reset
     artifact-name: xiao_reset
+
     # Lily with dongle
   - board: seeeduino_xiao_ble
     shield: lily58_dongle dongle_screen
@@ -39,22 +42,37 @@ include:
     shield: lily58_right nice_view_adapter nice_view_elemental
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
     artifact-name: lily_dongle_right
+
     # Lily without a dongle
   - board: nice_nano_v2
-    shield: lily58_left nice_view_adapter nice_view_elemental
+    shield: lily58_left nice_view_adapter nice_epaper
     artifact-name: lily_standalone_left
   - board: nice_nano_v2
-    shield: lily58_right nice_view_adapter nice_view_elemental
+    shield: lily58_right nice_view_adapter nice_epaper
     artifact-name: lily_standalone_right
+
     # Totem without a dongle
   - board: seeeduino_xiao_ble
     shield: totem_left rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: totem_standalone_left
+    cmake-args: -DBODGE=y
   - board: seeeduino_xiao_ble
     shield: totem_right rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: totem_standalone_right
+
+    # same as totem but without the bodge
+  - board: seeeduino_xiao_ble
+    shield: totem_left rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: totemx_standalone_left
+  - board: seeeduino_xiao_ble
+    shield: totem_right rgbled_adapter
+    snippet: studio-rpc-usb-uart
+    artifact-name: totemx_standalone_right
+
+
     # Totem with a dongle
   - board: seeeduino_xiao_ble
     shield: totem_left
@@ -68,6 +86,7 @@ include:
     shield: totem_dongle
     snippet: studio-rpc-usb-uart
     artifact-name: totem_dongle_central
+
     # Forager without a dongle
   - board: seeeduino_xiao_ble
     shield: forager_left rgbled_adapter
@@ -77,3 +96,11 @@ include:
     shield: forager_right rgbled_adapter
     snippet: studio-rpc-usb-uart
     artifact-name: forager_standalone_right
+
+    # Charybdis without a dongle
+  - board: nice_nano_v2
+    shield: charybdis_nano_left
+    artifact-name: charybdis_nano_standalone_left
+  - board: nice_nano_v2
+    shield: charybdis_nano_right
+    artifact-name: charybdis_nano_standalone_right
