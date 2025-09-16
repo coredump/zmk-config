@@ -55,7 +55,7 @@ layers:
   - {t: Numword, h: Num, s: Sticky Num}
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
-  - Space SC
+  - {t: Space SC, h: Num}
   - {t: Bspc, h: Raise, s: Del}
   - ''
   - ''
@@ -173,7 +173,7 @@ layers:
   - {t: Numword, h: Num, s: Sticky Num}
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
-  - Space SC
+  - {t: Space SC, h: Num}
   - {t: Bspc, h: Raise, s: Del}
   - ''
   - ''
@@ -318,7 +318,7 @@ layers:
   - BT 1
   - BT 2
   - BT 3
-  - BT 4
+  - OUT TOG
   - Bspc
   - Esc
   - {type: trans}
@@ -341,7 +341,7 @@ layers:
   - ''
   - ''
   - Bat Level
-  - {type: trans}
+  - Conn
   - {type: trans}
   - {type: trans}
   - Boot
@@ -469,7 +469,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - CANCEL
-  - {type: trans}
+  - {t: Bspc, h: Raise, s: Del}
   - ''
   - ''
   Nav:
@@ -486,7 +486,7 @@ layers:
   - '0'
   - Bspc
   - Tab
-  - '&win_lock'
+  - Screen Lock
   - {type: trans}
   - Prev Win/Tab
   - Next Tab
@@ -502,7 +502,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - '&win_prsc'
+  - Print Screen
   - PgDn
   - ←
   - ↓
@@ -510,7 +510,7 @@ layers:
   - {type: trans}
   - ''''
   - Ctrl
-  - Turn Off
+  - ''
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -569,7 +569,7 @@ layers:
   - {type: trans}
   - ''''
   - Ctrl
-  - Turn Off
+  - ''
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -594,8 +594,21 @@ combos:
 - p: [32, 31]
   k: {t: ESC, h: Sft+Ctrl}
   l: [Base, Nav, Num, MacOS, Gaming]
+- p: [27, 28]
+  k: {t: ESC, h: Sft+Ctrl}
+  l: [Base, Nav, Num, MacOS, Gaming]
+- p: [31, 33]
+  k: {t: Numword, h: AltGr+RSFT, s: Sticky Num}
+  l: [Base, MacOS, Gaming]
+  a: top
+  o: 1.45
+- p: [28, 26]
+  k: {t: Numword, h: Alt+LSFT, s: Sticky Num}
+  l: [Base, MacOS, Gaming]
+  a: top
+  o: 1.45
 - p: [28, 31]
-  k: {t: Caps Word, h: Sft+RSFT}
+  k: {t: Caps, h: Sft+RSFT}
   l: [Base, MacOS, Gaming]
 - p: [38, 37]
   k: Smart Mouse
@@ -631,7 +644,4 @@ combos:
   l: [Base, MacOS, Gaming]
 - p: [15, 27]
   k: \
-  l: [Base, MacOS, Gaming]
-- p: [29, 30]
-  k: {t: Numword, h: Num, s: Sticky Num}
   l: [Base, MacOS, Gaming]

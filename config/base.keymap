@@ -11,6 +11,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <behaviors/num_word.dtsi>
 #include "zmk-helpers/helper.h"
+#include <dt-bindings/zmk/outputs.hr
 
 #include <behaviors/rgbled_widget.dtsi>
 
@@ -26,18 +27,7 @@
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                    // Thumb keys.
 #endif
 
-#ifdef CONFIG_PM
-#define PM_KEY &soft_off
-/ {
-    soft_off_wakers {
-        compatible = "zmk,soft-off-wakeup-sources";
-        wakeup-sources = <&kscan0>;
-    };
-};
-&soft_off {
-	hold-time-ms = <2000>;
-};
-#else
+#ifndef PM_KEY
 #define PM_KEY &none
 #endif
 
@@ -100,14 +90,8 @@ ZMK_MACRO(mac_prsc, bindings = < &kp LG(LS(N4)) >;)
 ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
     ignored-key-positions = <LB3 LB4 LH0 RH0 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3>;
-    ignored-layers = <MOUSE LOWER RAISE>;)
+    ignored-layers = <MOUSE BASE LOWER RAISE>;)
 
-// Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
-#define SMART_NUM &smart_num NUM 0
-ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
-             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
-              tapping-term-ms = <200>;)
 
 #define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
 #define ___ &trans
@@ -122,6 +106,10 @@ ZMK_ADAPTIVE_KEY(
     };
 )
 
+// Tap:  double-tap: smart num-layer | triple tap: stick num.
+ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
+              tapping-term-ms = <200>;)
+
 ZMK_MOD_MORPH(bs_del, bindings = <&kp BSPC>, <&kp DEL>;
               mods = <(MOD_LCTL|MOD_RCTL)>;)
 
@@ -129,8 +117,18 @@ ZMK_MOD_MORPH(bs_del, bindings = <&kp BSPC>, <&kp DEL>;
 ZMK_HOLD_TAP(lt_bsdel, bindings = <&mo>, <&bs_del>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 
-ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&ak_space>; flavor = "balanced";
+#define LT_NUM &lt_num NUM 0
+ZMK_HOLD_TAP(lt_num, bindings = <&mo>, <&ak_space>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+
+
+// Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
+#define SMART_NUM &smart_num NUM 0
+ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
+              tapping-term-ms = <200>;)
+
 
 #ifndef ZMK_BASE_LAYER
   #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
@@ -141,7 +139,7 @@ ZMK_BASE_LAYER(Base,
     &kp Q           &kp W           &kp E            &kp R             &kp T         ,    &kp Y          &kp U           &kp I            &kp O            &kp P            ,
     &hml LGUI A     &hml LALT S     &hml LCTRL D     &hml LSHFT F      &kp G         ,    &kp H          &hmr RSHFT J    &hmr RCTRL K     &hmr RALT L      &hmr RGUI SEMI   ,
     &kp Z           &kp X           &kp C            &kp V             &kp B         ,    &kp N          &kp M           &kp COMMA        &kp DOT          &kp SLASH        ,
-                                                     &lt LOWER TAB     &lt NAV RET   ,    &ak_space      LT_BSDEL
+                                                     &lt LOWER TAB     &lt NAV RET   ,    LT_NUM      LT_BSDEL
 )
 
 ZMK_BASE_LAYER(MacOS,
@@ -155,7 +153,7 @@ ZMK_BASE_LAYER(Gaming,
     ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
     &kp A           &kp S           &kp D            &kp F             &kp G         ,    &kp H          &kp J           &kp K            &kp L            &kp SEMI         ,
     ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
-                                                     &lt LOWER TAB     &lt NAV RET   ,    &ak_space      LT_BSDEL
+                                                     &lt LOWER TAB     &lt NAV RET   ,    LT_NUM      LT_BSDEL
 )
 
 ZMK_BASE_LAYER(Lower,
@@ -173,9 +171,9 @@ ZMK_BASE_LAYER(Raise,
 )
 
 ZMK_BASE_LAYER(Adjust,
-    ___             ___             ___              ___               ___           ,    &bt BT_CLR     &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     ,
+    ___             ___             ___              ___               ___           ,    &bt BT_CLR     &bt BT_SEL 0    &bt BT_SEL 1     &bt BT_SEL 2     &out OUT_TOG     ,
     ___             ___             ___              ___               &tog MAC      ,    ___            ___             ___              ___              ___              ,
-    &bootloader     ___             ___              ___               &tog GAMING   ,    &ind_bat       ___             ___              ___              &bootloader      ,
+    &bootloader     ___             ___              ___               &tog GAMING   ,    &ind_bat       &ind_con        ___              ___              &bootloader      ,
                                                      ___               ___           ,    ___            ___
 )
 
@@ -190,7 +188,7 @@ ZMK_BASE_LAYER(Num,
     &kp N1          &kp N2          &kp N3           &kp N4            &kp N5        ,    &kp N6         &kp N7          &kp N8           &kp N9           &kp N0           ,
     ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
     ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
-                                                     ___               ___           ,    CANCEL         ___
+                                                     ___               ___           ,    CANCEL         LT_BSDEL
 )
 
 ZMK_BASE_LAYER(Nav,

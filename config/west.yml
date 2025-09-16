@@ -113,9 +113,14 @@ manifest:
       revision: main
       path: modules/forager-zmk-module
 
+#    - name: forager-zmk-module-dongle
+#      remote: carrefinho
+#      revision: main
+#      path: modules/forager-zmk-module-dongle
+
     - name: prospector-zmk-module
-      remote: prospector
-      revision: v1.1.1
+      remote: carrefinho
+      revision: main
       path: modules/prospector-zmk-module
 
     - name: zmk-nice-oled

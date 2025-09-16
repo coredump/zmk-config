@@ -33,7 +33,7 @@ layers:
   - /
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
-  - Space SC
+  - {t: Space SC, h: Num}
   - {t: Bspc, h: Raise, s: Del}
   MacOS:
   - {type: trans}
@@ -103,7 +103,7 @@ layers:
   - {type: trans}
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
-  - Space SC
+  - {t: Space SC, h: Num}
   - {t: Bspc, h: Raise, s: Del}
   Lower:
   - '`'
@@ -185,7 +185,7 @@ layers:
   - BT 1
   - BT 2
   - BT 3
-  - BT 4
+  - OUT TOG
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -202,7 +202,7 @@ layers:
   - {type: trans}
   - {t: Gaming, h: toggle}
   - Bat Level
-  - {type: trans}
+  - Conn
   - {type: trans}
   - {type: trans}
   - Boot
@@ -260,8 +260,6 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {type: held}
-  - {type: held}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -278,10 +276,12 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - CANCEL
   - {type: trans}
+  - {type: trans}
+  - {t: CANCEL, type: held}
+  - {t: Bspc, h: Raise, s: Del}
   Nav:
-  - '&win_lock'
+  - Screen Lock
   - {type: trans}
   - Prev Win/Tab
   - Next Tab
@@ -295,7 +295,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - '&win_prsc'
+  - Print Screen
   - PgDn
   - ←
   - ↓
@@ -354,8 +354,21 @@ combos:
 - p: [17, 16]
   k: {t: ESC, h: Sft+Ctrl}
   l: [Base, Nav, Num, MacOS, Gaming]
+- p: [12, 13]
+  k: {t: ESC, h: Sft+Ctrl}
+  l: [Base, Nav, Num, MacOS, Gaming]
+- p: [16, 18]
+  k: {t: Numword, h: AltGr+RSFT, s: Sticky Num}
+  l: [Base, MacOS, Gaming]
+  a: top
+  o: 1.45
+- p: [13, 11]
+  k: {t: Numword, h: Alt+LSFT, s: Sticky Num}
+  l: [Base, MacOS, Gaming]
+  a: top
+  o: 1.45
 - p: [13, 16]
-  k: {t: Caps Word, h: Sft+RSFT}
+  k: {t: Caps, h: Sft+RSFT}
   l: [Base, MacOS, Gaming]
 - p: [21, 20]
   k: Smart Mouse
@@ -391,7 +404,4 @@ combos:
   l: [Base, MacOS, Gaming]
 - p: [2, 12]
   k: \
-  l: [Base, MacOS, Gaming]
-- p: [14, 15]
-  k: {t: Numword, h: Num, s: Sticky Num}
   l: [Base, MacOS, Gaming]

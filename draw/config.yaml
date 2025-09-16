@@ -10,11 +10,14 @@ parse_config:
   raw_binding_map:
     "&sys_reset": Reset
     "&bootloader": Boot
-    "&caps_word": Caps Word
+    "&caps_word": {"t": "Caps", "bottom": "aa"}
 
     "&ind_bat": Bat Level
+    "&ind_con": Conn
 
     "&ak_space": "Space SC"
+    "&win_lock": "Screen Lock"
+    "&win_prsc": "Print Screen"
 
     "&bt BT_SEL 0": BT 1
     "&bt BT_SEL 1": BT 2
@@ -70,6 +73,8 @@ parse_config:
   zmk_combos:
     combo_cut: { align: bottom, o: 0.15 }
     combo_ldrsh: { align: top, o: 1.35 }
+    combo_nword: { align: top, o: 1.45 }
+    combo_lnword: { align: top, o: 1.45 }
 
     combo_lt: { hidden: true }
     combo_gt: { hidden: true }
