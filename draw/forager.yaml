@@ -21,7 +21,7 @@ layers:
   - {t: K, h: Ctrl}
   - {t: L, h: Alt}
   - {t: ;, h: Gui}
-  - Z
+  - {t: Z, h: Mouse}
   - X
   - {t: C, s: 'AltGr+,'}
   - V
@@ -55,7 +55,7 @@ layers:
   - {type: trans}
   - {t: K, h: Gui}
   - {type: trans}
-  - {t: ;, h: Gui}
+  - {t: ;, h: Ctrl}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -115,7 +115,7 @@ layers:
   - '{'
   - '}'
   - $
-  - {type: trans}
+  - \
   - '!'
   - '*'
   - /
@@ -231,7 +231,7 @@ layers:
   - Mouse ↓
   - Mouse →
   - Scroll →
-  - {type: trans}
+  - {type: held}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -291,7 +291,7 @@ layers:
   - ↑
   - End
   - {type: trans}
-  - Alt+F4
+  - {s: Alt+F4}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -316,7 +316,7 @@ layers:
   - {type: trans}
   - {type: trans}
   MacNav:
-  - '&mac_lock'
+  - {s: Gui+Ctl+Q}
   - {type: trans}
   - Prev Win/Tab
   - Next Tab
@@ -326,7 +326,7 @@ layers:
   - ↑
   - End
   - {type: trans}
-  - Gui+Q
+  - {s: Gui+Q}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -373,11 +373,14 @@ combos:
 - p: [21, 20]
   k: Smart Mouse
   l: [Base, MacOS, Gaming]
+- p: [6, 7, 8, 9]
+  k: '&leader'
+  l: [Base, MacOS, Gaming]
 - p: [21, 23]
   k: Cut
   l: [Base, Gaming]
   a: bottom
-  o: 0.15
+  o: 1.25
 - p: [21, 22]
   k: Ctl+C
   l: [Base, Gaming]
@@ -401,7 +404,4 @@ combos:
   l: [Base, MacOS, Gaming]
 - p: [27, 28]
   k: '?'
-  l: [Base, MacOS, Gaming]
-- p: [2, 12]
-  k: \
   l: [Base, MacOS, Gaming]

@@ -97,9 +97,8 @@ ZMK_MACRO(mac_prsc, bindings = < &kp LG(LS(N4)) >;)
 
 ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
-    ignored-key-positions = <LB3 LB4 LH1 RH1 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3>;
-    ignored-layers = <MOUSE BASE LOWER RAISE>;)
-
+    ignored-key-positions = <LB3 LB4 LH1 RH1 RH0 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3>;
+    ignored-layers = <MOUSE BASE LOWER RAISE SCROLL SNIPE WARP >;)
 
 ZMK_CONDITIONAL_LAYER(adjust, LOWER RAISE, ADJUST)
 
@@ -187,7 +186,7 @@ ZMK_BASE_LAYER(Gaming,
 )
 
 ZMK_BASE_LAYER(Lower,
-    &kp GRAVE       &kp LESS_THAN   &kp GREATER_THAN &kp MINUS         &kp PIPE      ,    &kp CARET      &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DOLLAR       ___              ,
+    &kp GRAVE       &kp LESS_THAN   &kp GREATER_THAN &kp MINUS         &kp PIPE      ,    &kp CARET      &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DOLLAR       &kp BACKSLASH    ,
     &kp EXCL        &kp ASTERISK    &kp SLASH        &kp EQUAL         &kp AMPS      ,    &kp HASH       &kp LPAR        &kp RPAR         &kp UNDERSCORE   &kp SQT          ,
     &kp TILDE       &kp PLUS        &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp PERCENT   ,    &kp AT_SIGN    &kp COLON       ___              ___              ___              ,
                                                      ___                ___          ,    ___            ___

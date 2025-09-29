@@ -94,6 +94,9 @@ draw:
     # forager
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/forager.keymap" >"{{ draw }}/forager.yaml"
     keymap -c "{{ draw }}/config.yaml" draw -z "forager" "{{ draw }}/forager.yaml" -s Base Lower Raise Adjust Nav > "{{ draw }}/forager.svg"
+    # charybdis
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/charybdis_nano.keymap" >"{{ draw }}/charybdis_nano.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw -j "{{ config }}/charybdis_nano.json" -l five_column_transform "{{ draw }}/charybdis_nano.yaml" -s Base Lower Raise Adjust Nav Mouse > "{{ draw }}/charybdis_nano.svg"
 
 # initialize west
 init:

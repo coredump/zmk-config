@@ -26,7 +26,9 @@ ZMK_COMBO(lnword,     &num_dance,       LM1 LM3,     BASE MAC GAMING, COMBO_TERM
 
 ZMK_COMBO(cword,      &caps_word,       LM1 RM1,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(RSFT), KEYS_L KEYS_R)
 
+#ifndef CONFIG_TRACKBALL
 ZMK_COMBO(mouse,      &smart_mouse,     LB3 LB4,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+#endif
 
 ZMK_COMBO(leader,      &leader,         RT1 RT2 RT3 RT4,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
@@ -41,8 +43,6 @@ ZMK_COMBO(mpaste,     &kp LG(V),        LB2 LB1,             MAC,       COMBO_TE
 ZMK_COMBO(quote,      &kp SQT,          RT1 RT2,     BASE MAC GAMING,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(dquote,     &kp DQT,          RT2 RT3,     BASE MAC GAMING,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(qmark,      &kp QMARK,        RB2 RB3,     BASE MAC GAMING,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
-/* Vertical combos left hand */
-ZMK_COMBO(backslash,  &kp BACKSLASH,    LT2 LM2,     BASE MAC GAMING,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* leader */
 //ZMK_COMBO(lead,     &leader,      RB2 RB3,     BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
