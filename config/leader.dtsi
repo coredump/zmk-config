@@ -14,3 +14,4 @@
         }; \
     };
 
+ZMK_LEADER_SEQUENCE(off, PM_KEY, O F F)

@@ -1,3 +1,4 @@
+#include <behaviors.dtsi>
 #define CONFIG_WIRELESS
 #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)  \
     ZMK_LAYER(                                                                 \
@@ -9,3 +10,4 @@
     )
 
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                    // Thumb keys.
+#define PM_KEY &soft_off

@@ -14,7 +14,7 @@ layers:
   - '0'
   - Bspc
   - Tab
-  - Q
+  - {t: Q, s: AltGr+`}
   - W
   - E
   - R
@@ -40,7 +40,7 @@ layers:
   - Ctrl
   - Z
   - X
-  - C
+  - {t: C, s: 'AltGr+,'}
   - V
   - B
   - ''
@@ -251,10 +251,10 @@ layers:
   - Bspc
   - Tab
   - {type: trans}
-  - F9
-  - F10
-  - F11
-  - F12
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - PgUp
   - Home
   - ↑
@@ -262,11 +262,11 @@ layers:
   - {type: trans}
   - Bspc
   - Esc
+  - {t: Gui, h: sticky}
+  - {t: Alt, h: sticky}
+  - {t: Ctrl, h: sticky}
+  - {t: Shift, h: sticky}
   - {type: trans}
-  - F5
-  - F6
-  - F7
-  - F8
   - PgDn
   - ←
   - ↓
@@ -275,10 +275,10 @@ layers:
   - ''''
   - Ctrl
   - {type: trans}
-  - F1
-  - F2
-  - F3
-  - F4
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - ''
   - ''
   - {type: trans}
@@ -439,20 +439,20 @@ layers:
   - '0'
   - Bspc
   - Esc
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
   - ''''
   - Ctrl
-  - {type: trans}
-  - {type: trans}
+  - F11
+  - F12
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -498,7 +498,7 @@ layers:
   - {type: trans}
   - Bspc
   - Esc
-  - {type: trans}
+  - Alt+F4
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -557,7 +557,7 @@ layers:
   - {type: trans}
   - Bspc
   - Esc
-  - {type: trans}
+  - Gui+Q
   - {type: trans}
   - {type: trans}
   - {type: trans}

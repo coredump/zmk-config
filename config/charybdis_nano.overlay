@@ -1,3 +1,0 @@
-&chosen {
-	zmk,matrix_transform = &five_colum_transform;
-};

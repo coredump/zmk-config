@@ -11,7 +11,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <behaviors/num_word.dtsi>
 #include "zmk-helpers/helper.h"
-#include <dt-bindings/zmk/outputs.hr
+#include <dt-bindings/zmk/outputs.h>
 
 #include <behaviors/rgbled_widget.dtsi>
 
@@ -42,7 +42,17 @@
 #define NAV 8
 #define MACNAV 9
 
+#ifdef CONFIG_TRACKBALL
+#define SNIPE 10
+#define WARP 11
+#define SCROLL 12
+#endif
+
 #define QUICK_TAP_MS 175
+#define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
+#define ___ &trans
+#define XXX &none
+
 
 &sk {
 	release-after-ms = <1200>;
@@ -72,8 +82,6 @@ ZMK_TRI_STATE(mac_sw, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
 ZMK_TRI_STATE(ctrltab, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>; )
 
-ZMK_MACRO(win_lock, bindings = < &kp LG(L) >;)
-ZMK_MACRO(mac_lock, bindings = < &kp LG(LC(Q))  >;)
 
 ZMK_MACRO(win_prsc, bindings = < &kp LG(LS(S)) >;)
 ZMK_MACRO(mac_prsc, bindings = < &kp LG(LS(N4)) >;)
@@ -89,13 +97,9 @@ ZMK_MACRO(mac_prsc, bindings = < &kp LG(LS(N4)) >;)
 
 ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
-    ignored-key-positions = <LB3 LB4 LH0 RH0 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3>;
+    ignored-key-positions = <LB3 LB4 LH1 RH1 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3>;
     ignored-layers = <MOUSE BASE LOWER RAISE>;)
 
-
-#define CANCEL    &kp K_CANCEL            // Cancel caps-word & auto-layers.
-#define ___ &trans
-#define XXX &none
 
 ZMK_CONDITIONAL_LAYER(adjust, LOWER RAISE, ADJUST)
 
@@ -111,6 +115,32 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
               tapping-term-ms = <200>;)
 
 ZMK_MOD_MORPH(bs_del, bindings = <&kp BSPC>, <&kp DEL>;
+              mods = <(MOD_LCTL|MOD_RCTL)>;)
+
+ZMK_MOD_MORPH(grv_til, bindings = <&kp RA(GRAVE)>, <&kp LS(RA(GRAVE))>;
+		      mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(q_grvtil, bindings = <&kp Q>, <&grv_til>;
+		      mods = <(MOD_RALT)>;)
+
+ZMK_MOD_MORPH(cedil, bindings = <&kp RA(COMMA)>, <&kp LS(RA(COMMA))>;
+		      mods = <(MOD_LSFT|MOD_RSFT)>;)
+ZMK_MOD_MORPH(c_cedil, bindings = <&kp C>, <&cedil>;
+		      mods = <(MOD_RALT)>;)
+
+ZMK_STICKY_KEY(sklazy, bindings = <&kp>;
+               release-after-ms = <1200>;
+			   lazy;)
+
+ZMK_MOD_MORPH(win_quit, bindings = <&none>, <&kp LA(F4)>;
+              mods = <(MOD_LCTL|MOD_RCTL)>;)
+
+ZMK_MOD_MORPH(mac_quit, bindings = <&none>, <&kp LG(Q)>;
+              mods = <(MOD_LCTL|MOD_RCTL)>;)
+
+ZMK_MOD_MORPH(mac_lock, bindings = <&none>, <&kp LG(LC(Q))>;
+              mods = <(MOD_LCTL|MOD_RCTL)>;)
+
+ZMK_MOD_MORPH(win_lock, bindings = <&none>, <&kp LG(L)>;
               mods = <(MOD_LCTL|MOD_RCTL)>;)
 
 #define LT_BSDEL &lt_bsdel RAISE 0
@@ -136,15 +166,15 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 #endif
 
 ZMK_BASE_LAYER(Base,
-    &kp Q           &kp W           &kp E            &kp R             &kp T         ,    &kp Y          &kp U           &kp I            &kp O            &kp P            ,
+    &q_grvtil       &kp W           &kp E            &kp R             &kp T         ,    &kp Y          &kp U           &kp I            &kp O            &kp P            ,
     &hml LGUI A     &hml LALT S     &hml LCTRL D     &hml LSHFT F      &kp G         ,    &kp H          &hmr RSHFT J    &hmr RCTRL K     &hmr RALT L      &hmr RGUI SEMI   ,
-    &kp Z           &kp X           &kp C            &kp V             &kp B         ,    &kp N          &kp M           &kp COMMA        &kp DOT          &kp SLASH        ,
+    &lt MOUSE Z     &kp X           &c_cedil         &kp V             &kp B         ,    &kp N          &kp M           &kp COMMA        &kp DOT          &kp SLASH        ,
                                                      &lt LOWER TAB     &lt NAV RET   ,    LT_NUM      LT_BSDEL
 )
 
 ZMK_BASE_LAYER(MacOS,
     ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
-    &hml LCTRL A    ___             &hml LGUI D      ___               ___           ,    ___            ___             &hmr RGUI K      ___              &hmr RGUI SEMI   ,
+    &hml LCTRL A    ___             &hml LGUI D      ___               ___           ,    ___            ___             &hmr RGUI K      ___              &hmr RCTRL SEMI  ,
     ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
                                                      ___               &lt MACNAV RET,    ___            ___
 )
@@ -164,10 +194,10 @@ ZMK_BASE_LAYER(Lower,
 )
 
 ZMK_BASE_LAYER(Raise,
-    ___             &kp F9          &kp F10          &kp F11           &kp F12       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
-    ___             &kp F5          &kp F6           &kp F7            &kp F8        ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
-    ___             &kp F1          &kp F2           &kp F3            &kp F4        ,    ___            ___             ___              ___              ___              ,
-                                                     ___               ___           ,    ___            ___
+    ___			   ___              ___              ___                ___          ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
+    &sklazy LGUI  &sklazy LALT      &sklazy LCTRL    &sklazy LSHFT      ___          ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
+    ___            ___              ___              ___                ___          ,    ___            ___             ___              ___              ___              ,
+                                                     ___                ___          ,    ___            ___
 )
 
 ZMK_BASE_LAYER(Adjust,
@@ -177,30 +207,61 @@ ZMK_BASE_LAYER(Adjust,
                                                      ___               ___           ,    ___            ___
 )
 
+#ifndef CONFIG_TRACKBALL
 ZMK_BASE_LAYER(Mouse,
     ___             ___             ___              ___               ___           ,    ___            U_WH_U          U_MS_U           U_WH_D           ___              ,
     ___             ___             ___              ___               ___           ,    U_WH_L         U_MS_L          U_MS_D           U_MS_R           U_WH_R           ,
     ___             ___             ___              ___               ___           ,    ___            &mkp LCLK       &mkp MCLK        &mkp RCLK        ___              ,
                                                      ___               ___           ,    CANCEL         ___
 )
+#else
+ZMK_BASE_LAYER(Mouse,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    ___             &mo SCROLL      &mo SNIPE        &mo WARP          ___           ,    ___            &mkp LCLK       &mkp MCLK        &mkp RCLK        ___              ,
+                                                     &mkp RCLK         &mkp LCLK     ,    &mkp MCLK      &mkp LCLK
+)
+#endif
 
 ZMK_BASE_LAYER(Num,
     &kp N1          &kp N2          &kp N3           &kp N4            &kp N5        ,    &kp N6         &kp N7          &kp N8           &kp N9           &kp N0           ,
-    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
-    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    &kp F1          &kp F2          &kp F3           &kp F4            &kp F5        ,    &kp F6         &kp F7          &kp F8           &kp F9           &kp F10          ,
+    &kp F11         &kp F12         ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
                                                      ___               ___           ,    CANCEL         LT_BSDEL
 )
 
 ZMK_BASE_LAYER(Nav,
     &win_lock       ___             &kp LS(TAB)      &ctrltab          &win_sw       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
-    ___             ___             ___              ___               &win_prsc     ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
+    &win_quit       ___             ___              ___               &win_prsc     ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
     PM_KEY          ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
                                                      ___               ___           ,    ___            ___
 )
 
 ZMK_BASE_LAYER(MacNav,
     &mac_lock       ___             &kp LS(TAB)      &ctrltab          &mac_sw       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
-    ___             ___             ___              ___               &mac_prsc     ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
+    &mac_quit       ___             ___              ___               &mac_prsc     ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
     PM_KEY          ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
                                                      ___               ___           ,    ___            ___
 )
+
+#ifdef CONFIG_TRACKBALL
+ZMK_BASE_LAYER(Snipe,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+                                                     ___               ___           ,    ___            ___
+)
+ZMK_BASE_LAYER(Warp,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+                                                     ___               ___           ,    ___            ___
+)
+ZMK_BASE_LAYER(Scroll,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+                                                     ___               ___           ,    ___            ___
+)
+#endif
+

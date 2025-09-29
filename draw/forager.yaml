@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: forager}
 layers:
   Base:
-  - Q
+  - {t: Q, s: AltGr+`}
   - W
   - E
   - R
@@ -23,7 +23,7 @@ layers:
   - {t: ;, h: Gui}
   - Z
   - X
-  - C
+  - {t: C, s: 'AltGr+,'}
   - V
   - B
   - N
@@ -142,30 +142,30 @@ layers:
   - {type: trans}
   Raise:
   - {type: trans}
-  - F9
-  - F10
-  - F11
-  - F12
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - PgUp
   - Home
   - ↑
   - End
   - {type: trans}
+  - {t: Gui, h: sticky}
+  - {t: Alt, h: sticky}
+  - {t: Ctrl, h: sticky}
+  - {t: Shift, h: sticky}
   - {type: trans}
-  - F5
-  - F6
-  - F7
-  - F8
   - PgDn
   - ←
   - ↓
   - →
   - {type: trans}
   - {type: trans}
-  - F1
-  - F2
-  - F3
-  - F4
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -256,18 +256,18 @@ layers:
   - '8'
   - '9'
   - '0'
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -291,7 +291,7 @@ layers:
   - ↑
   - End
   - {type: trans}
-  - {type: trans}
+  - Alt+F4
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -326,7 +326,7 @@ layers:
   - ↑
   - End
   - {type: trans}
-  - {type: trans}
+  - Gui+Q
   - {type: trans}
   - {type: trans}
   - {type: trans}
