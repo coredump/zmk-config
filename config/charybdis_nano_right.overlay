@@ -1,4 +1,5 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <scroll-snap.dtsi>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
@@ -70,6 +71,7 @@
 			input-processors = <
 									   &zip_xy_scaler 1 10                              // Scales the scroll speed
 									   &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
+									   &zip_scroll_snap
 									   &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
 							   >;
 		};

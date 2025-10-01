@@ -46,6 +46,8 @@ manifest:
       url-base: https://github.com/vloth
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: kot149
+      url-base: https://github.com/kot149
 
   projects:
     - name: zmk
@@ -137,6 +139,11 @@ manifest:
       remote: badjeff
       revision: main
       path: modules/zmk/pwm3610-driver
+
+    - name: zmk-scroll-snap
+      remote: kot149
+      revision: v1
+      path: modules/zmk/scroll-snap
 
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.

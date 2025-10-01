@@ -95,10 +95,17 @@ ZMK_MACRO(mac_prsc, bindings = < &kp LG(LS(N4)) >;)
 #include "leader.dtsi"
 #include "mouse.dtsi"
 
+#ifndef CONFIG_TRACKBALL
 ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
     ignored-key-positions = <LB3 LB4 LH1 RH1 RH0 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3>;
-    ignored-layers = <MOUSE BASE LOWER RAISE SCROLL SNIPE WARP >;)
+    ignored-layers = <MOUSE BASE LOWER RAISE>;)
+#else
+ZMK_TRI_STATE(
+    smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
+    ignored-key-positions = <LB3 LB4 LH1 RH1 RH0 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3>;
+    ignored-layers = <MOUSE BASE LOWER RAISE SCROLL SNIPE WARP>;)
+#endif
 
 ZMK_CONDITIONAL_LAYER(adjust, LOWER RAISE, ADJUST)
 
