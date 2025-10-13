@@ -17,6 +17,7 @@
 #
 ---
 manifest:
+  version: "1.2"
   defaults:
     remote: urob
     revision: v0.2 # Pin everything to v0.2
@@ -24,6 +25,8 @@ manifest:
   remotes:
     - name: urob
       url-base: https://github.com/urob
+    - name: coredump
+      url-base: https://github.com/coredump
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: kevinpastor
@@ -32,8 +35,6 @@ manifest:
       url-base: https://github.com/janpfischer
     - name: caksoylar
       url-base: https://github.com/caksoylar
-    - name: coredump
-      url-base: https://github.com/coredump
     - name: joelspadin
       url-base: https://github.com/joelspadin
     - name: carrefinho
@@ -48,6 +49,8 @@ manifest:
       url-base: https://github.com/badjeff
     - name: kot149
       url-base: https://github.com/kot149
+    - name: efogdev
+      url-base: https://github.com/efogdev
 
   projects:
     - name: zmk
@@ -115,11 +118,6 @@ manifest:
       revision: main
       path: modules/forager-zmk-module
 
-#    - name: forager-zmk-module-dongle
-#      remote: carrefinho
-#      revision: main
-#      path: modules/forager-zmk-module-dongle
-
     - name: prospector-zmk-module
       remote: carrefinho
       revision: main
@@ -135,15 +133,21 @@ manifest:
       revision: main
       path: modules/zmk/keyboard-charybdis-nano
 
-    - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: main
-      path: modules/zmk/pwm3610-driver
+#    - name: zmk-pmw3610-driver
+#      remote: badjeff
+#      revision: main
+#      path: modules/zmk/pwm3610-driver
 
     - name: zmk-scroll-snap
       remote: kot149
       revision: v1
       path: modules/zmk/scroll-snap
+
+    - name: zmk-keyboard-crosses
+      revision: main
+      remote: coredump
+      import: west.yml
+      path: modules/
 
     # Temporarily overload Zephyr until
     # https://github.com/zmkfirmware/zephyr/pull/40 is merged.

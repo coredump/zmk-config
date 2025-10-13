@@ -11,3 +11,6 @@ nice-view-elemental
 nice-*
 prospector*
 zmk-dongle-screen
+
+zmk-input-processor-report-rate-limit
+zmk-pmw3610-driver
