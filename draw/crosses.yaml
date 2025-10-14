@@ -1,0 +1,427 @@
+layout: {zmk_keyboard: crosses, layout_name: gggw_crosses_36_layout}
+layers:
+  Base:
+  - {t: Q, s: AltGr+`}
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: A, h: Gui}
+  - {t: S, h: Alt}
+  - {t: D, h: Ctrl}
+  - {t: F, h: Shift}
+  - G
+  - H
+  - {t: J, h: Shift}
+  - {t: K, h: Ctrl}
+  - {t: L, h: Alt}
+  - {t: ;, h: Gui}
+  - {t: Z, h: Mouse}
+  - X
+  - {t: C, s: 'AltGr+,'}
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: Tab, h: Lower}
+  - {t: Enter, h: Nav}
+  - {t: Space SC, h: Num}
+  - {t: Bspc, h: Raise, s: Del}
+  - ''
+  MacOS:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: A, h: Ctrl}
+  - {type: trans}
+  - {t: D, h: Gui}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: K, h: Gui}
+  - {type: trans}
+  - {t: ;, h: Ctrl}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {t: Enter, h: MacNav}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  Gaming:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: Tab, h: Lower}
+  - {t: Enter, h: Nav}
+  - {t: Space SC, h: Num}
+  - {t: Bspc, h: Raise, s: Del}
+  - ''
+  Lower:
+  - '`'
+  - <
+  - '>'
+  - '-'
+  - '|'
+  - ^
+  - '{'
+  - '}'
+  - $
+  - \
+  - '!'
+  - '*'
+  - /
+  - '='
+  - '&'
+  - '#'
+  - (
+  - )
+  - _
+  - ''''
+  - '~'
+  - +
+  - '['
+  - ']'
+  - '%'
+  - '@'
+  - ':'
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  Raise:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - {t: Gui, h: sticky}
+  - {t: Alt, h: sticky}
+  - {t: Ctrl, h: sticky}
+  - {t: Shift, h: sticky}
+  - {type: trans}
+  - PgDn
+  - ←
+  - ↓
+  - →
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - ''
+  Adjust:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - BT CLR
+  - BT 1
+  - BT 2
+  - BT 3
+  - OUT TOG
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: MacOS, h: toggle}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Boot
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: Gaming, h: toggle}
+  - Bat Level
+  - Conn
+  - {type: trans}
+  - {type: trans}
+  - Boot
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - ''
+  Mouse:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Scroll ↑
+  - Mouse ↑
+  - Scroll ↓
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Scroll ←
+  - Mouse ←
+  - Mouse ↓
+  - Mouse →
+  - Scroll →
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Left Click
+  - Middle Click
+  - Right Click
+  - {type: trans}
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {type: trans}
+  - CANCEL
+  - {type: trans}
+  - ''
+  Num:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: Numword, h: Num, s: Sticky Num, type: held}
+  - {type: trans}
+  - {type: trans}
+  - CANCEL
+  - {t: Bspc, h: Raise, s: Del}
+  - ''
+  Nav:
+  - Screen Lock
+  - {type: trans}
+  - Prev Win/Tab
+  - Next Tab
+  - Next Win
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - {s: Alt+F4}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Print Screen
+  - PgDn
+  - ←
+  - ↓
+  - →
+  - {type: trans}
+  - Turn Off
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - ''
+  MacNav:
+  - {s: Gui+Ctl+Q}
+  - {type: trans}
+  - Prev Win/Tab
+  - Next Tab
+  - '&mac_sw'
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - {s: Gui+Q}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - '&mac_prsc'
+  - PgDn
+  - ←
+  - ↓
+  - →
+  - {type: trans}
+  - Turn Off
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: Numword, h: Num, s: Sticky Num}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - ''
+combos:
+- p: [17, 16]
+  k: {t: ESC, h: Sft+Ctrl}
+  l: [Base, Nav, Num, MacOS, Gaming]
+- p: [12, 13]
+  k: {t: ESC, h: Sft+Ctrl}
+  l: [Base, Nav, Num, MacOS, Gaming]
+- p: [16, 18]
+  k: {t: Numword, h: AltGr+RSFT, s: Sticky Num}
+  l: [Base, MacOS, Gaming]
+  a: top
+  o: 1.45
+- p: [13, 11]
+  k: {t: Numword, h: Alt+LSFT, s: Sticky Num}
+  l: [Base, MacOS, Gaming]
+  a: top
+  o: 1.45
+- p: [13, 16]
+  k: {t: Caps, h: Sft+RSFT}
+  l: [Base, MacOS, Gaming]
+- p: [21, 20]
+  k: Smart Mouse
+  l: [Base, MacOS, Gaming]
+- p: [6, 7, 8, 9]
+  k: '&leader'
+  l: [Base, MacOS, Gaming]
+- p: [21, 23]
+  k: Cut
+  l: [Base, Gaming]
+  a: bottom
+  o: 1.25
+- p: [21, 22]
+  k: Ctl+C
+  l: [Base, Gaming]
+- p: [22, 23]
+  k: Ctl+V
+  l: [Base, Gaming]
+- p: [21, 23]
+  k: Gui+X
+  l: [MacOS]
+- p: [21, 22]
+  k: Gui+C
+  l: [MacOS]
+- p: [22, 23]
+  k: Gui+V
+  l: [MacOS]
+- p: [6, 7]
+  k: ''''
+  l: [Base, MacOS, Gaming]
+- p: [7, 8]
+  k: '"'
+  l: [Base, MacOS, Gaming]
+- p: [27, 28]
+  k: '?'
+  l: [Base, MacOS, Gaming]
