@@ -20,8 +20,8 @@
 ZMK_MACRO(esc, bindings = <&kp ESC>;) // target of the combo can't be a kp
 
 ZMK_COMBO(esc,        &esc,             RM2 RM1,     BASE NAV NUM MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, RS(RCTRL), KEYS_L)
-ZMK_COMBO(lesc,       &esc,             LM2 LM1,     BASE NAV NUM MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(LCTRL), KEYS_L)
-ZMK_COMBO(nword,      &num_dance,       RM1 RM3,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, RA(RSFT), KEYS_L KEYS_R)
+ZMK_COMBO(lesc,       &esc,             LM2 LM1,     BASE NAV NUM MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(LCTRL), KEYS_R)
+ZMK_COMBO(nword,      &num_dance,       RM1 RM3,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, RA(RSFT), KEYS_L KEYS_L)
 ZMK_COMBO(lnword,     &num_dance,       LM1 LM3,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, LA(LSFT), KEYS_L KEYS_R)
 
 ZMK_COMBO(cword,      &caps_word,       LM1 RM1,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(RSFT), KEYS_L KEYS_R)
@@ -30,7 +30,7 @@ ZMK_COMBO(cword,      &caps_word,       LM1 RM1,     BASE MAC GAMING, COMBO_TERM
 ZMK_COMBO(mouse,      &smart_mouse,     LB3 LB4,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 #endif
 
-ZMK_COMBO(leader,      &leader,         RT1 RT2 RT3 RT4,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(leader,      &leader,         RT1 RT3,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Horizontal combos - left hand */
 ZMK_COMBO(cut,        &kp LC(X),        LB3 LB1,     BASE GAMING,   COMBO_TERM_FAST, COMBO_IDLE_FAST)

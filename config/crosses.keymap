@@ -1,5 +1,6 @@
 #include <behaviors.dtsi>
 #define CONFIG_WIRELESS
+#define CONFIG_TRACKBALL
 #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)  \
     ZMK_LAYER(                                                                 \
         name,                                                                  \
@@ -15,8 +16,7 @@
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 // Left-hand keys.
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 // Right-hand keys.
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2 // Thumb keys.
-
-#define PM_KEY &none
+#define PM_KEY &soft_off
 
 / {
     chosen {
@@ -24,4 +24,58 @@
     };
 };
 
+
+&spi1 {
+//	/delete-node/ trackball_central@0;
+	/delete-node/ trackball_peripheral@0;
+	trackball_central@0 {
+		reg = <0>;
+		rst-gpios = <&gpio1 6  GPIO_ACTIVE_LOW>;
+		enable-pm-support;
+    };
+};
+
+&i2c0_default {
+	group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 4)>,
+                <NRF_PSEL(TWIM_SCL, 1, 7)>;
+	};
+};
+&i2c0_sleep {
+	group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 4)>,
+                <NRF_PSEL(TWIM_SCL, 1, 7)>;
+	};
+};
+
+// /delete-node/ &trackball_central_listener;
+/delete-node/ &trackball_peripheral_split;
+/delete-node/ &trackball_peripheral_listener;
+
+#include <scroll-snap.dtsi>
+&trackball_central_listener {
+		input-processors = <&zip_xy_scaler 5 5>;
+
+		scroller: scroller {
+			layers           = <12>;
+			input-processors = <
+									   &zip_xy_scaler 1 10                              // Scales the scroll speed
+									   &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
+									   &zip_scroll_snap
+									   &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
+							   >;
+		};
+
+		slow_pointer: slow_pointer {
+			layers           = <10>;
+			input-processors = <&zip_xy_scaler 2 6>;
+		};
+
+		fast_pointer: fast_pointer {
+			layers           = <11>;
+			input-processors = <&zip_xy_scaler 6 2>;
+		};
+};
+
+#include "nano_led.dtsi"
 #include "base.keymap"
