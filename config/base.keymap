@@ -72,6 +72,18 @@
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
+// for the shifts
+ZMK_HOLD_TAP(shml, bindings = <&kp>, <&kp>; flavor = "balanced";            \
+           tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
+           require-prior-idle-ms = <100>; hold-trigger-on-release;         \
+           hold-trigger-key-positions = <KEYS_R THUMBS>;)
+
+ZMK_HOLD_TAP(shmr, bindings = <&kp>, <&kp>; flavor = "balanced";            \
+           tapping-term-ms = <280>; quick-tap-ms = <QUICK_TAP_MS>;         \
+           require-prior-idle-ms = <100>; hold-trigger-on-release;         \
+           hold-trigger-key-positions = <KEYS_L THUMBS>;)
+
+
 // Alt+Tab swapper, requires tri-state module.
 ZMK_TRI_STATE(win_sw, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
               ignored-key-positions = <LT2 RM2 RB1 RB2 RB3>; )
@@ -173,7 +185,7 @@ ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
 
 ZMK_BASE_LAYER(Base,
     &q_grvtil       &kp W           &kp E            &kp R             &kp T         ,    &kp Y          &kp U           &kp I            &kp O            &kp P            ,
-    &hml LGUI A     &hml LALT S     &hml LCTRL D     &hml LSHFT F      &kp G         ,    &kp H          &hmr RSHFT J    &hmr RCTRL K     &hmr RALT L      &hmr RGUI SEMI   ,
+    &hml LGUI A     &hml LALT S     &hml LCTRL D     &shml LSHFT F     &kp G         ,    &kp H          &shmr RSHFT J   &hmr RCTRL K     &hmr RALT L      &hmr RGUI SEMI   ,
     &lt MOUSE Z     &kp X           &c_cedil         &kp V             &kp B         ,    &kp N          &kp M           &kp COMMA        &kp DOT          &kp SLASH        ,
                                                      &lt LOWER TAB     &lt NAV RET   ,    LT_NUM      LT_BSDEL
 )
