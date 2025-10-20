@@ -31,12 +31,12 @@ layers:
   - ','
   - .
   - /
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
   - {t: Space SC, h: Num}
   - {t: Bspc, h: Raise, s: Del}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   MacOS:
   - {type: trans}
   - {type: trans}
@@ -68,12 +68,12 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {t: Enter, h: MacNav}
   - {type: trans}
   - {type: trans}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   Gaming:
   - {type: trans}
   - {type: trans}
@@ -105,12 +105,12 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
   - {t: Space SC, h: Num}
   - {t: Bspc, h: Raise, s: Del}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   Lower:
   - '`'
   - <
@@ -142,12 +142,12 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: held}
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   Raise:
   - {type: trans}
   - {type: trans}
@@ -159,10 +159,10 @@ layers:
   - ↑
   - End
   - {type: trans}
-  - {t: Gui, h: sticky}
-  - {t: Alt, h: sticky}
-  - {t: Ctrl, h: sticky}
-  - {t: Shift, h: sticky}
+  - {t: Gui, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Alt, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Ctrl, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Shift, h: '$$mdi:gesture-tap-hold$$'}
   - {type: trans}
   - PgDn
   - ←
@@ -179,12 +179,12 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: held}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   Adjust:
   - {type: trans}
   - {type: trans}
@@ -216,12 +216,12 @@ layers:
   - {type: trans}
   - {type: trans}
   - Boot
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: held}
   - {type: trans}
   - {type: trans}
   - {type: held}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   Mouse:
   - {type: trans}
   - {type: trans}
@@ -229,36 +229,36 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - Scroll ↑
-  - Mouse ↑
-  - Scroll ↓
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - Scroll ←
-  - Mouse ←
-  - Mouse ↓
-  - Mouse →
-  - Scroll →
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
   - {type: held}
-  - {type: trans}
-  - {type: trans}
-  - {type: trans}
+  - Scroll
+  - Snipe
+  - Warp
   - {type: trans}
   - {type: trans}
   - Left Click
   - Middle Click
   - Right Click
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
-  - {type: trans}
-  - {type: trans}
-  - CANCEL
-  - {type: trans}
-  - ''
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - Right Click
+  - Left Click
+  - Middle Click
+  - Left Click
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   Num:
   - '1'
   - '2'
@@ -290,12 +290,12 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num, type: held}
+  - {t: 󰜼Numword, h: Num, s: St Num, type: held}
   - {type: trans}
   - {type: trans}
   - CANCEL
   - {t: Bspc, h: Raise, s: Del}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   Nav:
   - Screen Lock
   - {type: trans}
@@ -327,18 +327,18 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: held}
   - {type: trans}
   - {type: trans}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   MacNav:
-  - {s: Gui+Ctl+Q}
-  - {type: trans}
+  - Screen Lock
+  - Next App Window
   - Prev Win/Tab
   - Next Tab
-  - '&mac_sw'
+  - Next Window
   - PgUp
   - Home
   - ↑
@@ -348,7 +348,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - '&mac_prsc'
+  - Print Screen
   - PgDn
   - ←
   - ↓
@@ -364,43 +364,140 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: held}
   - {type: trans}
   - {type: trans}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Snipe:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Warp:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Scroll:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
 combos:
 - p: [17, 16]
   k: {t: ESC, h: Sft+Ctrl}
-  l: [Base, Nav, Num, MacOS, Gaming]
+  l: [Base, MacOS, Gaming]
 - p: [12, 13]
   k: {t: ESC, h: Sft+Ctrl}
-  l: [Base, Nav, Num, MacOS, Gaming]
-- p: [16, 18]
-  k: {t: Numword, h: AltGr+RSFT, s: Sticky Num}
+  l: [Base, MacOS, Gaming]
+- p: [6, 8]
+  k: Leader
   l: [Base, MacOS, Gaming]
   a: top
-  o: 1.45
-- p: [13, 11]
-  k: {t: Numword, h: Alt+LSFT, s: Sticky Num}
-  l: [Base, MacOS, Gaming]
-  a: top
-  o: 1.45
-- p: [13, 16]
-  k: {t: Caps, h: Sft+RSFT}
-  l: [Base, MacOS, Gaming]
-- p: [21, 20]
-  k: Smart Mouse
-  l: [Base, MacOS, Gaming]
-- p: [6, 7, 8, 9]
-  k: '&leader'
-  l: [Base, MacOS, Gaming]
+  o: 0.5
 - p: [21, 23]
   k: Cut
   l: [Base, Gaming]
   a: bottom
-  o: 1.25
+  o: 1.5
 - p: [21, 22]
   k: Ctl+C
   l: [Base, Gaming]

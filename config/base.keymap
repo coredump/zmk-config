@@ -91,6 +91,9 @@ ZMK_TRI_STATE(win_sw, bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 ZMK_TRI_STATE(mac_sw, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
               ignored-key-positions = <LT2 RM2 RB1 RB2 RB3>; )
 
+ZMK_TRI_STATE(mac_app_sw, bindings = <&kt LGUI>, <&kp GRAVE>, <&kt LGUI>;
+              ignored-key-positions = <LT2 RM2 RB1 RB2 RB3>; )
+
 ZMK_TRI_STATE(ctrltab, bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
               ignored-key-positions = <LT2 RT2 RM1 RM2 RM3>; )
 
@@ -153,10 +156,10 @@ ZMK_MOD_MORPH(win_quit, bindings = <&none>, <&kp LA(F4)>;
               mods = <(MOD_LCTL|MOD_RCTL)>;)
 
 ZMK_MOD_MORPH(mac_quit, bindings = <&none>, <&kp LG(Q)>;
-              mods = <(MOD_LCTL|MOD_RCTL)>;)
+              mods = <(MOD_LGUI|MOD_RGUI)>;)
 
 ZMK_MOD_MORPH(mac_lock, bindings = <&none>, <&kp LG(LC(Q))>;
-              mods = <(MOD_LCTL|MOD_RCTL)>;)
+              mods = <(MOD_LGUI|MOD_RGUI)>;)
 
 ZMK_MOD_MORPH(win_lock, bindings = <&none>, <&kp LG(L)>;
               mods = <(MOD_LCTL|MOD_RCTL)>;)
@@ -175,6 +178,13 @@ ZMK_HOLD_TAP(lt_num, bindings = <&mo>, <&ak_space>; flavor = "balanced";
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
              tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
 ZMK_TAP_DANCE(num_dance, bindings = <&num_word NUM>, <&sl NUM>;
+              tapping-term-ms = <200>;)
+
+// Tap: shift | double-tap: capsword | Hold: shift
+#define SMART_SHIFT &smart_shift LSHFT 0
+ZMK_HOLD_TAP(smart_shift, bindings = <&kp>, <&sft_dance>; flavor = "balanced";
+             tapping-term-ms = <200>; quick-tap-ms = <QUICK_TAP_MS>;)
+ZMK_TAP_DANCE(sft_dance, bindings = <&sk LSHFT>, <&caps_word>;
               tapping-term-ms = <200>;)
 
 
@@ -256,7 +266,7 @@ ZMK_BASE_LAYER(Nav,
 )
 
 ZMK_BASE_LAYER(MacNav,
-    &mac_lock       ___             &kp LS(TAB)      &ctrltab          &mac_sw       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
+    &mac_lock       &mac_app_sw     &kp LS(TAB)      &ctrltab          &mac_sw       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
     &mac_quit       ___             ___              ___               &mac_prsc     ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
     PM_KEY          ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
                                                      ___               ___           ,    ___            ___

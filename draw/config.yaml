@@ -1,4 +1,6 @@
 parse_config:
+  sticky_label: $$mdi:gesture-tap-hold$$
+  shrink_wide_labels: 5
   zmk_additional_includes:
     - "modules/zmk/helpers/include"
 
@@ -18,6 +20,10 @@ parse_config:
     "&ak_space": "Space SC"
     "&win_lock": "Screen Lock"
     "&win_prsc": "Print Screen"
+    "&mac_lock": "Screen Lock"
+    "&mac_prsc": "Print Screen"
+    "&mac_app_sw": "Next App Window"
+    "&mac_sw": "Next Window"
 
     "&bt BT_SEL 0": BT 1
     "&bt BT_SEL 1": BT 2
@@ -33,11 +39,14 @@ parse_config:
     "&kp LG(LC(LS(A)))": Pin App
     "&kp LG(LC(LS(Q)))": Pin Win
 
+
+    "&sft_dance": { "s": "󰜼 Capsword", "t": "St Shft"}
     "&ctrltab": Next Tab
+    "&leader": Leader
     "&win_sw": Next Win
     "&kp LS(TAB)": Prev Win/Tab
     "&dot_spc": Sentence
-    "&num_dance": { "t": "Numword", "s": "Sticky Num" }
+    "&num_dance": { "t": "󰜼Numword", "s": "St Num" }
     "&magic_shift": { "t": Magic, "h": "Shift" }
     "&smart_mouse": Smart Mouse
 
@@ -71,10 +80,11 @@ parse_config:
   trans_legend: { "t": "", "type": "trans" }
 
   zmk_combos:
-    combo_cut: { align: bottom, o: 1.25 }
+    combo_cut: { align: bottom, o: 1.5 }
     combo_ldrsh: { align: top, o: 1.35 }
     combo_nword: { align: top, o: 1.45 }
     combo_lnword: { align: top, o: 1.45 }
+    combo_leader: { align: top, o: 0.5 }
 
     combo_lt: { hidden: true }
     combo_gt: { hidden: true }

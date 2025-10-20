@@ -7,7 +7,7 @@
                  LT RT                                                         \
                  LM RM                                                         \
                  LB RB                                                         \
-       SMART_NUM LH RH &none                                                   \
+       SMART_NUM LH RH SMART_SHIFT                                             \
     )
 
 #include "zmk-helpers/key-labels/36.h"
@@ -91,7 +91,7 @@
 									   &zip_xy_scaler 1 15                              // Scales the scroll speed
 									   &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
 									   &zip_scroll_snap
-									   &zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
+									   //&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
 							   >;
 		};
 

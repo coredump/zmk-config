@@ -98,7 +98,8 @@ draw:
     #keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/charybdis_nano.keymap" >"{{ draw }}/charybdis_nano.yaml"
     # crosses
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/crosses.keymap" >"{{ draw }}/crosses.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/crosses.yaml" -s Base Lower Raise Adjust Nav Mouse > "{{ draw }}/crosses.svg"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/crosses.yaml" -d modules/boards/shields/crosses/thirty_six_layout.dtsi \
+    -s Base Lower Raise Adjust Nav MacNav > "{{ draw }}/crosses.svg"
 
 # initialize west
 init:
