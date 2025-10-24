@@ -86,19 +86,25 @@ draw:
     #!/usr/bin/env bash
     set -euo pipefail
     # lily
-    #keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/lily58.keymap" >"{{ draw }}/lily58.yaml"
-    #keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/lily58.yaml" -s Base Lower Raise Adjust Nav >"{{ draw }}/lily58.svg"
+    echo "lily"
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/lily58.keymap" >"{{ draw }}/lily58.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/lily58.yaml" -s Base Lower Raise Adjust Nav >"{{ draw }}/lily58.svg"
     # totem
-    #keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/totem_left.keymap" >"{{ draw }}/totem.yaml"
-    #keymap -c "{{ draw }}/config.yaml" draw -z "totem" "{{ draw }}/totem.yaml" -s Base Lower Raise Adjust Nav >"{{ draw }}/totem.svg"
+    echo "totem"
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/totem_left.keymap" >"{{ draw }}/totem.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw -z "totem" "{{ draw }}/totem.yaml" -s Base Lower Raise Adjust Nav >"{{ draw }}/totem.svg"
     # forager
-    #keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/forager.keymap" >"{{ draw }}/forager.yaml"
-    #keymap -c "{{ draw }}/config.yaml" draw -z "forager" "{{ draw }}/forager.yaml" -s Base Lower Raise Adjust Nav > "{{ draw }}/forager.svg"
+    echo "forager"
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/forager.keymap" >"{{ draw }}/forager.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw -z "forager" "{{ draw }}/forager.yaml" -s Base Lower Raise Adjust Nav > "{{ draw }}/forager.svg"
     # charybdis
-    #keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/charybdis_nano.keymap" >"{{ draw }}/charybdis_nano.yaml"
+    echo "charybdis_nano"
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/charybdis_nano.keymap" >"{{ draw }}/charybdis_nano.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw -l five_column_transform -j config/charybdis_nano.json "{{ draw }}/charybdis_nano.yaml" -s Base Lower Raise Adjust Nav > "{{ draw }}/charybdis_nano.svg"
     # crosses
+    echo "crosses"
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/crosses.keymap" >"{{ draw }}/crosses.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/crosses.yaml" -d modules/boards/shields/crosses/thirty_six_layout.dtsi \
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/crosses.yaml" -d modules/zmk/keyboard-crosses/boards/shields/crosses/thirty_six_layout.dtsi \
     -s Base Lower Raise Adjust Nav MacNav > "{{ draw }}/crosses.svg"
 
 # initialize west

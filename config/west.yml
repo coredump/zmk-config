@@ -144,7 +144,7 @@ manifest:
       revision: main
       remote: coredump
 #      import: west.yml
-      path: modules/
+      path: modules/zmk/keyboard-crosses
 
     - name: zmk-poor-mans-led-indicator
       remote: bluedrink9

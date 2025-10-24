@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: charybdis_nano}
 layers:
   Base:
-  - {t: Q, s: AltGr+`}
+  - {t: Q, s: Dead `}
   - W
   - E
   - R
@@ -31,7 +31,7 @@ layers:
   - ','
   - .
   - /
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
   - {t: Space SC, h: Num}
@@ -67,7 +67,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {t: Enter, h: MacNav}
   - {type: trans}
@@ -103,7 +103,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
   - {t: Space SC, h: Num}
@@ -139,7 +139,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: held}
   - {type: trans}
   - {type: trans}
@@ -155,10 +155,10 @@ layers:
   - ↑
   - End
   - {type: trans}
-  - {t: Gui, h: sticky}
-  - {t: Alt, h: sticky}
-  - {t: Ctrl, h: sticky}
-  - {t: Shift, h: sticky}
+  - {t: Gui, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Alt, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Ctrl, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Shift, h: '$$mdi:gesture-tap-hold$$'}
   - {type: trans}
   - PgDn
   - ←
@@ -175,7 +175,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -211,7 +211,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - Boot
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: held}
   - {type: trans}
   - {type: trans}
@@ -247,7 +247,7 @@ layers:
   - Middle Click
   - Right Click
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - Right Click
   - Left Click
   - Middle Click
@@ -283,7 +283,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num, type: held}
+  - {t: 󰜼Numword, h: Num, s: St Num, type: held}
   - {type: trans}
   - {type: trans}
   - CANCEL
@@ -319,17 +319,17 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: held}
   - {type: trans}
   - {type: trans}
   MacNav:
-  - {s: Gui+Ctl+Q}
-  - {type: trans}
+  - Screen Lock
+  - Next App Window
   - Prev Win/Tab
   - Next Tab
-  - '&mac_sw'
+  - Next Window
   - PgUp
   - Home
   - ↑
@@ -339,7 +339,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - '&mac_prsc'
+  - Print Screen
   - PgDn
   - ←
   - ↓
@@ -355,7 +355,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: held}
   - {type: trans}
@@ -391,7 +391,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -427,7 +427,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -463,7 +463,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: trans}
   - {type: trans}
@@ -471,31 +471,20 @@ layers:
 combos:
 - p: [17, 16]
   k: {t: ESC, h: Sft+Ctrl}
-  l: [Base, Nav, Num, MacOS, Gaming]
+  l: [Base, MacOS, Gaming]
 - p: [12, 13]
   k: {t: ESC, h: Sft+Ctrl}
-  l: [Base, Nav, Num, MacOS, Gaming]
-- p: [16, 18]
-  k: {t: Numword, h: AltGr+RSFT, s: Sticky Num}
+  l: [Base, MacOS, Gaming]
+- p: [6, 8]
+  k: Leader
   l: [Base, MacOS, Gaming]
   a: top
-  o: 1.45
-- p: [13, 11]
-  k: {t: Numword, h: Alt+LSFT, s: Sticky Num}
-  l: [Base, MacOS, Gaming]
-  a: top
-  o: 1.45
-- p: [13, 16]
-  k: {t: Caps, h: Sft+RSFT}
-  l: [Base, MacOS, Gaming]
-- p: [6, 7, 8, 9]
-  k: '&leader'
-  l: [Base, MacOS, Gaming]
+  o: 0.5
 - p: [21, 23]
   k: Cut
   l: [Base, Gaming]
   a: bottom
-  o: 1.25
+  o: 1.5
 - p: [21, 22]
   k: Ctl+C
   l: [Base, Gaming]
@@ -520,3 +509,26 @@ combos:
 - p: [27, 28]
   k: '?'
   l: [Base, MacOS, Gaming]
+- p: [6, 7]
+  k: Dead '
+  l: [Lower]
+- p: [7, 8]
+  k: Dead "
+  l: [Lower]
+- p: [5, 7]
+  k: Dead ^
+  l: [Lower]
+  a: top
+  o: 1.0
+  s: -0.5
+- p: [5, 8]
+  k: Dead ~
+  l: [Lower]
+  a: top
+  o: 1.0
+- p: [6, 8]
+  k: Dead `
+  l: [Lower]
+  a: top
+  o: 0.5
+  s: 0.5

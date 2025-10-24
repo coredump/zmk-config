@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: crosses, layout_name: gggw_crosses_36_layout}
 layers:
   Base:
-  - {t: Q, s: AltGr+`}
+  - {t: Q, s: Dead `}
   - W
   - E
   - R
@@ -522,3 +522,26 @@ combos:
 - p: [27, 28]
   k: '?'
   l: [Base, MacOS, Gaming]
+- p: [6, 7]
+  k: Dead '
+  l: [Lower]
+- p: [7, 8]
+  k: Dead "
+  l: [Lower]
+- p: [5, 7]
+  k: Dead ^
+  l: [Lower]
+  a: top
+  o: 1.0
+  s: -0.5
+- p: [5, 8]
+  k: Dead ~
+  l: [Lower]
+  a: top
+  o: 1.0
+- p: [6, 8]
+  k: Dead `
+  l: [Lower]
+  a: top
+  o: 0.5
+  s: 0.5

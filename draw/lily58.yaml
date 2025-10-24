@@ -14,7 +14,7 @@ layers:
   - '0'
   - Bspc
   - Tab
-  - {t: Q, s: AltGr+`}
+  - {t: Q, s: Dead `}
   - W
   - E
   - R
@@ -52,12 +52,12 @@ layers:
   - /
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
   - {t: Space SC, h: Num}
   - {t: Bspc, h: Raise, s: Del}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
   MacOS:
   - '`'
@@ -111,12 +111,12 @@ layers:
   - {type: trans}
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {t: Enter, h: MacNav}
   - {type: trans}
   - {type: trans}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
   Gaming:
   - '`'
@@ -170,12 +170,12 @@ layers:
   - {type: trans}
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {t: Tab, h: Lower}
   - {t: Enter, h: Nav}
   - {t: Space SC, h: Num}
   - {t: Bspc, h: Raise, s: Del}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
   Lower:
   - '`'
@@ -229,12 +229,12 @@ layers:
   - {type: trans}
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: held}
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
   Raise:
   - '`'
@@ -262,10 +262,10 @@ layers:
   - {type: trans}
   - Bspc
   - Esc
-  - {t: Gui, h: sticky}
-  - {t: Alt, h: sticky}
-  - {t: Ctrl, h: sticky}
-  - {t: Shift, h: sticky}
+  - {t: Gui, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Alt, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Ctrl, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Shift, h: '$$mdi:gesture-tap-hold$$'}
   - {type: trans}
   - PgDn
   - ←
@@ -288,12 +288,12 @@ layers:
   - {type: trans}
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: trans}
   - {type: trans}
   - {type: held}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
   Adjust:
   - '`'
@@ -347,12 +347,12 @@ layers:
   - Boot
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: held}
   - {type: trans}
   - {type: trans}
   - {type: held}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
   Mouse:
   - '`'
@@ -406,12 +406,12 @@ layers:
   - {type: trans}
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: trans}
   - CANCEL
   - {type: trans}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
   Num:
   - '`'
@@ -465,12 +465,12 @@ layers:
   - {type: trans}
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num, type: held}
+  - {t: 󰜼Numword, h: Num, s: St Num, type: held}
   - {type: trans}
   - {type: trans}
   - CANCEL
   - {t: Bspc, h: Raise, s: Del}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
   Nav:
   - '`'
@@ -524,12 +524,12 @@ layers:
   - {type: trans}
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: held}
   - {type: trans}
   - {type: trans}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
   MacNav:
   - '`'
@@ -545,11 +545,11 @@ layers:
   - '0'
   - Bspc
   - Tab
-  - {s: Gui+Ctl+Q}
-  - {type: trans}
+  - Screen Lock
+  - Next App Window
   - Prev Win/Tab
   - Next Tab
-  - '&mac_sw'
+  - Next Window
   - PgUp
   - Home
   - ↑
@@ -561,7 +561,7 @@ layers:
   - {type: trans}
   - {type: trans}
   - {type: trans}
-  - '&mac_prsc'
+  - Print Screen
   - PgDn
   - ←
   - ↓
@@ -583,44 +583,33 @@ layers:
   - {type: trans}
   - RSFT
   - ''
-  - {t: Numword, h: Num, s: Sticky Num}
+  - {t: 󰜼Numword, h: Num, s: St Num}
   - {type: trans}
   - {type: held}
   - {type: trans}
   - {type: trans}
-  - ''
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
   - ''
 combos:
 - p: [32, 31]
   k: {t: ESC, h: Sft+Ctrl}
-  l: [Base, Nav, Num, MacOS, Gaming]
+  l: [Base, MacOS, Gaming]
 - p: [27, 28]
   k: {t: ESC, h: Sft+Ctrl}
-  l: [Base, Nav, Num, MacOS, Gaming]
-- p: [31, 33]
-  k: {t: Numword, h: AltGr+RSFT, s: Sticky Num}
-  l: [Base, MacOS, Gaming]
-  a: top
-  o: 1.45
-- p: [28, 26]
-  k: {t: Numword, h: Alt+LSFT, s: Sticky Num}
-  l: [Base, MacOS, Gaming]
-  a: top
-  o: 1.45
-- p: [28, 31]
-  k: {t: Caps, h: Sft+RSFT}
   l: [Base, MacOS, Gaming]
 - p: [38, 37]
   k: Smart Mouse
   l: [Base, MacOS, Gaming]
-- p: [19, 20, 21, 22]
-  k: '&leader'
+- p: [19, 21]
+  k: Leader
   l: [Base, MacOS, Gaming]
+  a: top
+  o: 0.5
 - p: [38, 40]
   k: Cut
   l: [Base, Gaming]
   a: bottom
-  o: 1.25
+  o: 1.5
 - p: [38, 39]
   k: Ctl+C
   l: [Base, Gaming]
@@ -645,3 +634,26 @@ combos:
 - p: [46, 47]
   k: '?'
   l: [Base, MacOS, Gaming]
+- p: [19, 20]
+  k: Dead '
+  l: [Lower]
+- p: [20, 21]
+  k: Dead "
+  l: [Lower]
+- p: [18, 20]
+  k: Dead ^
+  l: [Lower]
+  a: top
+  o: 1.0
+  s: -0.5
+- p: [18, 21]
+  k: Dead ~
+  l: [Lower]
+  a: top
+  o: 1.0
+- p: [19, 21]
+  k: Dead `
+  l: [Lower]
+  a: top
+  o: 0.5
+  s: 0.5

@@ -17,6 +17,12 @@ parse_config:
     "&ind_bat": Bat Level
     "&ind_con": Conn
 
+    "&kp RA(SQT)": Dead '
+    "&kp RA(DQT)": Dead "
+    "&kp RA(CARET)": Dead ^
+    "&kp RA(TILDE)": Dead ~
+    "&kp RA(GRAVE)": Dead `
+
     "&ak_space": "Space SC"
     "&win_lock": "Screen Lock"
     "&win_prsc": "Print Screen"
@@ -90,6 +96,10 @@ parse_config:
     combo_gt: { hidden: true }
     combo_lbrc: { hidden: true }
     combo_rbrc: { hidden: true }
+
+    combo_xcaret: { align: top, o: 1.00, s: -0.5}
+    combo_xtilde: { align: top, o: 1.00, }
+    combo_xgrave: { align: top, o: 0.50, s: 0.5 }
 
   zmk_keycode_map:
     # custom mappings

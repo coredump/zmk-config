@@ -7,7 +7,7 @@
          &kp TAB   LT RT &kp BSPC                                                         \
          &kp ESC   LM RM &kp SQT                                                         \
          &kp LCTRL LB &none &none RB &kp RSFT                                                         \
-                &none SMART_NUM LH RH &none &none                  \
+                &none SMART_NUM LH RH SMART_SHIFT &none                  \
     )
 
 #define THUMBS LH0 LH1 LH2 LH3 RH0 RH1 RH2 RH3
