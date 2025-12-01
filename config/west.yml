@@ -100,6 +100,16 @@ manifest:
       revision: chore/moduled-studiod
       path: modules/zmk/config-totem
 
+    - name: zmk-keyboard-totemball-mod
+      remote: coredump
+      revision: main
+      path: modules/zmk/keyboard-totemball-mod
+
+    - name: zmk-keyboard-diodeless-iskra
+      remote: coredump
+      revision: main
+      path: modules/zmk/keyboard-diodeless-iskra
+
     - name: zmk-lily58-dongle # modularized lily fork
       remote: coredump
       revision: main

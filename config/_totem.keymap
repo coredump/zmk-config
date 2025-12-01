@@ -6,8 +6,8 @@
                  LT RT                                                         \
                  LM RM                                                         \
                  &kp ESC LB RB &kp BSLH                                        \
-                 SMART_NUM LH RH  &none \
+                 SMART_NUM LH RH SMART_SHIFT \
     )
 
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                    // Thumb keys.
-#define PM_KEY &soft_off
+#define PM_KEY &none

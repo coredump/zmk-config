@@ -21,10 +21,6 @@ ZMK_MACRO(esc, bindings = <&kp ESC>;) // target of the combo can't be a kp
 
 ZMK_COMBO(esc,        &esc,             RM2 RM1,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, RS(RCTRL), KEYS_L)
 ZMK_COMBO(lesc,       &esc,             LM2 LM1,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(LCTRL), KEYS_R)
-//ZMK_COMBO(nword,      &num_dance,       RM1 RM3,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, RA(RSFT), KEYS_L KEYS_L)
-//ZMK_COMBO(lnword,     &num_dance,       LM1 LM3,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, LA(LSFT), KEYS_L KEYS_R)
-
-//ZMK_COMBO(cword,      &caps_word,       LM1 RM1,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST, LS(RSFT), KEYS_L KEYS_R)
 
 #ifndef CONFIG_TRACKBALL
 ZMK_COMBO(mouse,      &smart_mouse,     LB3 LB4,     BASE MAC GAMING, COMBO_TERM_FAST, COMBO_IDLE_FAST)
@@ -47,8 +43,5 @@ ZMK_COMBO(qmark,      &kp QMARK,        RB2 RB3,     BASE MAC GAMING,   COMBO_TE
 ZMK_COMBO(xquote,     &kp RA(SQT),      RT1 RT2,               LOWER,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(xdquote,    &kp RA(DQT),      RT2 RT3,               LOWER,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
 ZMK_COMBO(xcaret,     &kp RA(CARET),    RT0 RT2,               LOWER,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(xtilde,     &kp RA(TILDE),    RT0 RT3,               LOWER,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
-ZMK_COMBO(xgrave,     &kp RA(GRAVE),    RT1 RT3,               LOWER,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
-
-/* leader */
-//ZMK_COMBO(lead,     &leader,      RB2 RB3,     BASE, COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(xtilde,     &kp RA(TILDE),    RT1 RT3,               LOWER,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(xgrave,     &kp RA(GRAVE),    RT0 RT3,               LOWER,   COMBO_TERM_FAST, COMBO_IDLE_FAST)
