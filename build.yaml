@@ -121,3 +121,11 @@ include:
   - board: nice_nano_v2
     shield: iskra
     artifact-name: iskra
+
+  # totemball
+  - board: seeeduino_xiao_ble
+    shield: totemball_left rgbled_adapter
+    artifact-name: totemball_standalone_left
+  - board: seeeduino_xiao_ble
+    shield: totemball_right rgbled_adapter
+    artifact-name: totemball_standalone_right
