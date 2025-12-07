@@ -129,3 +129,5 @@ include:
   - board: seeeduino_xiao_ble
     shield: totemball_right rgbled_adapter
     artifact-name: totemball_standalone_right
+    cmake-args: "-DDTS_EXTRA_CPPFLAGS=-DUSE_TB=1"
+    snippet: zmk-usb-logging

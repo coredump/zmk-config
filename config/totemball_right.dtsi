@@ -1,6 +1,7 @@
 #include <scroll-snap.dtsi>
 #include <input/processors/report_rate_limit.dtsi>
 #include <behaviors/input_gestures_accel.dtsi>
+
 &zip_scroll_snap {
 	x-threshold = <5 8>;
 	y-threshold = <8 5>;
@@ -23,30 +24,36 @@
 	acceleration-exponent = <2>;  // Quadratic acceleration curve
 };
 
-&trackball {
-	input-processors = <
-							   // &zip_xy_scaler 1 1
-							   &pointer_accel
-							   &zip_report_rate_limit 4
-					   >;
 
-	scroller: scroller {
-		layers           = <12>;
+/ {
+	trackball_listener {
+		compatible = "zmk,input-listener";
+		device = <&trackball>;
+
 		input-processors = <
-								   &zip_xy_scaler 1 15                              // Scales the scroll speed
-								   &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
-								   &zip_scroll_snap
-								   //&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
+								   // &zip_xy_scaler 1 1
+								   &pointer_accel
+								   &zip_report_rate_limit 4
 						   >;
-	};
 
-	slow_pointer: slow_pointer {
-		layers           = <10>;
-		input-processors = <&zip_xy_scaler 2 8>;
-	};
+		scroller: scroller {
+			layers = <12>;
+			input-processors = <
+									   &zip_xy_scaler 1 15                              // Scales the scroll speed
+									   &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
+									   &zip_scroll_snap
+									   //&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
+							   >;
+		};
 
-	fast_pointer: fast_pointer {
-		layers           = <11>;
-		input-processors = <&zip_xy_scaler 6 2>;
+		slow_pointer: slow_pointer {
+			layers = <10>;
+			input-processors = <&zip_xy_scaler 2 8>;
+		};
+
+		fast_pointer: fast_pointer {
+			layers = <11>;
+			input-processors = <&zip_xy_scaler 6 2>;
+		};
 	};
 };

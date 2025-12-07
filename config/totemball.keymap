@@ -17,4 +17,8 @@
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                    // Thumb keys.
 #define PM_KEY &none
 
+#if defined(USE_TB)
+#include "totemball_right.dtsi"
+#endif
+
 #include "base.keymap"
