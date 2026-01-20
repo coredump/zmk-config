@@ -1,3 +1,0 @@
-#include "_totem.keymap"
-#include "zmk-helpers/key-labels/totem.h"
-#include "base.keymap"

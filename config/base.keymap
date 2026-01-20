@@ -259,9 +259,9 @@ ZMK_BASE_LAYER(Num,
 )
 
 ZMK_BASE_LAYER(Nav,
-    &win_lock       ___             &kp LS(TAB)      &ctrltab          &win_sw       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
+    &win_lock       &mac_app_sw     &kp LS(TAB)      &ctrltab          &win_sw       ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
     &win_quit       ___             ___              ___               &win_prsc     ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
-    PM_KEY          ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
+    PM_KEY          ___             ___              ___               ___           ,    ___            &kp LG(LC(LEFT)) ___             &kp LG(LC(RIGHT))___              ,
                                                      ___               ___           ,    ___            ___
 )
 

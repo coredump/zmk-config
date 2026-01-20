@@ -1,4 +1,5 @@
 #include <behaviors.dtsi>
+#include <scroll-snap.dtsi>
 #define CONFIG_WIRELESS
 #define CONFIG_TRACKBALL
 #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)  \
@@ -24,87 +25,27 @@
     };
 };
 
-
-&spi1 {
-//	/delete-node/ trackball_central@0;
-	/delete-node/ trackball_peripheral@0;
-	trackball_central@0 {
-		reg = <0>;
-		rst-gpios = <&gpio1 6  GPIO_ACTIVE_LOW>;
-		enable-pm-support;
-		force-awake;
-    };
-};
-
-&i2c0_default {
-	group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 1, 4)>,
-                <NRF_PSEL(TWIM_SCL, 1, 7)>;
-	};
-};
-&i2c0_sleep {
-	group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 1, 4)>,
-                <NRF_PSEL(TWIM_SCL, 1, 7)>;
-	};
-};
-
-// /delete-node/ &trackball_central_listener;
-/delete-node/ &trackball_peripheral_split;
-/delete-node/ &trackball_peripheral_listener;
-
-#include <scroll-snap.dtsi>
-#include <input/processors/report_rate_limit.dtsi>
-#include <behaviors/input_gestures_accel.dtsi>
-&zip_scroll_snap {
-    x-threshold = <5 8>;
-    y-threshold = <8 5>;
-    xy-threshold = <5 8>;
-
-    require-n-samples = <10>;
-    immediate-snap-threshold = <1500>;
-    lock-duration-ms = <200>;
-    lock-for-next-n-events = <10>;
-    idle-reset-timeout-ms = <200>;
-};
-
-&pointer_accel {
-    input-type = <INPUT_EV_REL>;  // For relative input devices
-    track-remainders;             // Accumulate fractional movements
-    min-factor = <500>;          //  at very slow speeds
-    max-factor = <3000>;         // 3.0x at fast speeds
-    speed-threshold = <1500>;     // 1200 counts/sec for 1x
-    speed-max = <6000>;          // 6000 counts/sec for max accel
-    acceleration-exponent = <2>;  // Quadratic acceleration curve
-};
-
 &trackball_central_listener {
-		input-processors = <
-                                       // &zip_xy_scaler 1 1
-                                       &pointer_accel
-                                       &zip_report_rate_limit 4
-        >;
-
-		scroller: scroller {
+	input-processors = <&zip_ble_report_rate_limit>;
+    scroller: scroller {
 			layers           = <12>;
 			input-processors = <
-									   &zip_xy_scaler 1 15                              // Scales the scroll speed
-									   &zip_xy_to_scroll_mapper                         // Converts XY movement to scroll events
-									   &zip_scroll_snap
-									   //&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
+			   &zip_xy_scaler 1 15             // Scales the scroll speed
+			   &zip_xy_to_scroll_mapper        // Converts XY movement to scroll events
+               &zip_scroll_snap               //  snap to a direction for macos
+			   //&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT) // Inverts the scroll direction
 							   >;
 		};
 
-		slow_pointer: slow_pointer {
-			layers           = <10>;
-			input-processors = <&zip_xy_scaler 2 8>;
-		};
+    slow_pointer: slow_pointer {
+        layers           = <10>;
+        input-processors = <&zip_xy_scaler 2 8>;
+    };
 
-		fast_pointer: fast_pointer {
-			layers           = <11>;
-			input-processors = <&zip_xy_scaler 6 2>;
-		};
+    fast_pointer: fast_pointer {
+        layers           = <11>;
+        input-processors = <&zip_xy_scaler 6 2>;
+    };
 };
 
-#include "nano_led.dtsi"
 #include "base.keymap"

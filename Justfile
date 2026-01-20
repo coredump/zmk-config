@@ -6,51 +6,23 @@ build := absolute_path('.build')
 out := absolute_path('firmware')
 draw := absolute_path('draw')
 
-# parse combos.dtsi and adjust settings to not run out of slots
-_parse_combos:
-#    #!/usr/bin/env bash
-#    set -euo pipefail
-#    cconf="{{ config / 'combos.dtsi' }}"
-#    if [[ -f $cconf ]]; then
-#        # set MAX_COMBOS_PER_KEY to the most frequent combos count
-#        count=$(
-#            tail -n +10 $cconf |
-#                grep -Eo '[LR][TMBH][0-9]' |
-#                sort | uniq -c | sort -nr |
-#                awk 'NR==1{print $1}'
-#        )
-#        sed -Ei "/CONFIG_ZMK_COMBO_MAX_COMBOS_PER_KEY/s/=.+/=$count/" "{{ config }}"/*.conf
-#        echo "Setting MAX_COMBOS_PER_KEY to $count"
-#
-#        # set MAX_KEYS_PER_COMBO to the most frequent key count
-#        count=$(
-#            tail -n +10 $cconf |
-#                grep -o -n '[LR][TMBH][0-9]' |
-#                cut -d : -f 1 | uniq -c | sort -nr |
-#                awk 'NR==1{print $1}'
-#        )
-#        sed -Ei "/CONFIG_ZMK_COMBO_MAX_KEYS_PER_COMBO/s/=.+/=$count/" "{{ config }}"/*.conf
-#        echo "Setting MAX_KEYS_PER_COMBO to $count"
-#    fi
-
 # parse build.yaml and filter targets by expression
 _parse_targets $expr:
     #!/usr/bin/env bash
-    attrs="[.board, .shield, .snippet, .\"artifact-name\", .\"cmake-args\" ]"
+    attrs="[.board, .shield, .snippet, .\"artifact-name\"]"
     filter="(($attrs | map(. // [.]) | combinations), ((.include // {})[] | $attrs)) | join(\",\")"
     echo "$(yq -r "$filter" build.yaml | grep -v "^," | grep -i "${expr/#all/.*}")"
 
 # build firmware for single board & shield combination
-_build_single $board $shield $snippet $artifact $cmargs *west_args:
+_build_single $board $shield $snippet $artifact *west_args:
     #!/usr/bin/env bash
     set -euo pipefail
     artifact="${artifact:-${shield:+${shield// /+}-}${board}}"
-    echo  $artifact
     build_dir="{{ build / '$artifact' }}"
 
     echo "Building firmware for $artifact..."
     west build -s zmk/app -d "$build_dir" -b $board {{ west_args }} ${snippet:+-S "$snippet"} -- \
-        -DZMK_CONFIG="{{ config }}" ${shield:+-DSHIELD="$shield"} ${cmargs:+$cmargs}
+        -DZMK_CONFIG="{{ config }}" ${shield:+-DSHIELD="$shield"}
 
     if [[ -f "$build_dir/zephyr/zmk.uf2" ]]; then
         mkdir -p "{{ out }}" && cp "$build_dir/zephyr/zmk.uf2" "{{ out }}/$artifact.uf2"
@@ -59,14 +31,14 @@ _build_single $board $shield $snippet $artifact $cmargs *west_args:
     fi
 
 # build firmware for matching targets
-build expr *west_args: _parse_combos
+build expr *west_args:
     #!/usr/bin/env bash
     set -euo pipefail
     targets=$(just _parse_targets {{ expr }})
 
     [[ -z $targets ]] && echo "No matching targets found. Aborting..." >&2 && exit 1
-    echo "$targets" | while IFS=, read -r board shield snippet artifact cmargs; do
-        just _build_single "$board" "$shield" "$snippet" "$artifact" "$cmargs" {{ west_args }}
+    echo "$targets" | while IFS=, read -r board shield snippet artifact; do
+        just _build_single "$board" "$shield" "$snippet" "$artifact" {{ west_args }}
     done
 
 # clear build cache and artifacts
@@ -85,27 +57,9 @@ clean-nix:
 draw:
     #!/usr/bin/env bash
     set -euo pipefail
-    # lily
-    echo "lily"
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/lily58.keymap" >"{{ draw }}/lily58.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/lily58.yaml" -s Base Lower Raise Adjust Nav >"{{ draw }}/lily58.svg"
-    # totem
-    echo "totem"
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/totem_left.keymap" >"{{ draw }}/totem.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw -z "totem" "{{ draw }}/totem.yaml" -s Base Lower Raise Adjust Nav >"{{ draw }}/totem.svg"
-    # forager
-    echo "forager"
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/forager.keymap" >"{{ draw }}/forager.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw -z "forager" "{{ draw }}/forager.yaml" -s Base Lower Raise Adjust Nav > "{{ draw }}/forager.svg"
-    # charybdis
-    echo "charybdis_nano"
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/charybdis_nano.keymap" >"{{ draw }}/charybdis_nano.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw -l five_column_transform -j config/charybdis_nano.json "{{ draw }}/charybdis_nano.yaml" -s Base Lower Raise Adjust Nav > "{{ draw }}/charybdis_nano.svg"
-    # crosses
-    echo "crosses"
-    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/crosses.keymap" >"{{ draw }}/crosses.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/crosses.yaml" -d modules/zmk/keyboard-crosses/boards/shields/crosses/thirty_six_layout.dtsi \
-    -s Base Lower Raise Adjust Nav MacNav > "{{ draw }}/crosses.svg"
+    keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/base.keymap" --virtual-layers Combos >"{{ draw }}/base.yaml"
+    yq -Yi '.combos.[].l = ["Combos"]' "{{ draw }}/base.yaml"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/base.yaml" -k "ferris/sweep" >"{{ draw }}/base.svg"
 
 # initialize west
 init:
