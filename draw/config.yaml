@@ -1,15 +1,34 @@
 parse_config:
+  sticky_label: $$mdi:gesture-tap-hold$$
+  shrink_wide_labels: 5
   zmk_additional_includes:
     - "modules/zmk/helpers/include"
 
   zmk_preamble: |
-    #include <zmk-helpers/key-labels/34.h>
     #define CONFIG_WIRELESS
+    #define CONFIG_PM
 
   raw_binding_map:
     "&sys_reset": Reset
     "&bootloader": Boot
-    "&caps_word": Caps Word
+    "&caps_word": {"t": "Caps", "bottom": "aa"}
+
+    "&ind_bat": Bat Level
+    "&ind_con": Conn
+
+    "&kp RA(SQT)": Dead '
+    "&kp RA(DQT)": Dead "
+    "&kp RA(CARET)": Dead ^
+    "&kp RA(TILDE)": Dead ~
+    "&kp RA(GRAVE)": Dead `
+
+    "&ak_space": "Space SC"
+    "&win_lock": "Screen Lock"
+    "&win_prsc": "Print Screen"
+    "&mac_lock": "Screen Lock"
+    "&mac_prsc": "Print Screen"
+    "&mac_app_sw": "Next App Window"
+    "&mac_sw": "Next Window"
 
     "&bt BT_SEL 0": BT 1
     "&bt BT_SEL 1": BT 2
@@ -25,18 +44,27 @@ parse_config:
     "&kp LG(LC(LS(A)))": Pin App
     "&kp LG(LC(LS(Q)))": Pin Win
 
-    "&swapper": Next Win
-    "&kp LS(TAB)": Prev Win
+
+    "&sft_dance": { "s": "󰜼 Capsword", "t": "St Shft"}
+    "&ctrltab": Next Tab
+    "&leader": Leader
+    "&win_sw": Next Win
+    "&kp LS(TAB)": Prev Win/Tab
     "&dot_spc": Sentence
-    "&num_dance": { "t": "Numword", "s": "Sticky Num" }
+    "&num_dance": { "t": "󰜼Numword", "s": "St Num" }
     "&magic_shift": { "t": Magic, "h": "Shift" }
     "&smart_mouse": Smart Mouse
+
+    "&soft_off": Turn Off
+    "&esc": ESC
 
     "&hml LS(LALT)TAB": Tab
     "&hm_combo_ldr": Leader
     "&hm_combo_ldrsh": Shift+Leader
     "&hm_combo_lpar": { "t": "(", "right": "<" }
     "&hm_combo_rpar": { "t": ")", "right": ">" }
+    "&hm_combo_esc": { "t": "ESC" }
+    "&hm_combo_lesc": { "t": "ESC" }
     "&kp LBKT": { "t": "[", "right": "{" }
     "&kp RBKT": { "t": "]", "right": "}" }
 
@@ -59,13 +87,20 @@ parse_config:
   trans_legend: { "t": "", "type": "trans" }
 
   zmk_combos:
-    combo_cut: { align: bottom, o: 0.15 }
+    combo_cut: { align: bottom, o: 1.5 }
     combo_ldrsh: { align: top, o: 1.35 }
+    combo_nword: { align: top, o: 1.45 }
+    combo_lnword: { align: top, o: 1.45 }
+    combo_leader: { align: top, o: 0.5 }
 
     combo_lt: { hidden: true }
     combo_gt: { hidden: true }
     combo_lbrc: { hidden: true }
     combo_rbrc: { hidden: true }
+
+    combo_xcaret: { align: top, o: 1.00, s: -0.5}
+    combo_xtilde: { align: top, o: 1.00, }
+    combo_xgrave: { align: top, o: 0.50, s: 0.5 }
 
   zmk_keycode_map:
     # custom mappings
@@ -172,4 +207,6 @@ parse_config:
 draw_config:
   append_colon_to_layer_header: false
   dark_mode: auto
-  footer_text: "urob/zmk-config"
+  footer_text: "coredump/zmk-config"
+  separate_combo_diagrams: false
+  n_columns: 1
