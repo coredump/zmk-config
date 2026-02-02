@@ -5,6 +5,9 @@ config := absolute_path('config')
 build := absolute_path('.build')
 out := absolute_path('firmware')
 draw := absolute_path('draw')
+venv := absolute_path('.venv')
+
+export PATH := venv / "bin" + ":" + env('PATH')
 
 # parse build.yaml and filter targets by expression
 _parse_targets $expr:
@@ -49,16 +52,12 @@ clean:
 clean-all: clean
     rm -rf .west zmk
 
-# clear nix cache
-clean-nix:
-    nix-collect-garbage --delete-old
-
 # parse & plot keymap
 draw:
     #!/usr/bin/env bash
     set -euo pipefail
     keymap -c "{{ draw }}/config.yaml" parse -z "{{ config }}/crosses.keymap" >>"{{ draw }}/crosses.yaml"
-    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/crosses.yaml" -s Base Lower Num -d "gggw-zmk-keebs/boards/shields/crosses/thirty_six_layout.dtsi"  >"{{ draw }}/crosses.svg"
+    keymap -c "{{ draw }}/config.yaml" draw "{{ draw }}/crosses.yaml" -s Base Lower Num -d gggw-zmk-keebs/boards/shields/crosses/thirty_six_layout.dtsi >"{{ draw }}/crosses.svg"
 
 # initialize west
 init:
@@ -74,9 +73,9 @@ list:
 update:
     west update --fetch-opt=--filter=blob:none
 
-# upgrade zephyr-sdk and python dependencies
-upgrade-sdk:
-    nix flake update --flake .
+# run setup (install dependencies)
+setup:
+    mise run setup
 
 [no-cd]
 test $testpath *FLAGS:

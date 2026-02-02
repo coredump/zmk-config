@@ -1,23 +1,32 @@
-.build
-.idea
-.direnv
-.west
-modules
-firmware
-zephyr
-zmk
+# Build artifacts
+.build/
+build/
+firmware/
+
+# West workspace (fetched dependencies)
+.west/
+zmk/
+zephyr/
+modules/
+gggw-zmk-keebs/
+optional/
+
+# Legacy modules (managed by west now)
+zmk-*/
+nice-*/
+
+# Development environment
+.venv/
+.zephyr-sdk/
+.direnv/
+
+# IDE
+.idea/
+.clangd
+cmake-build-debug/
+compile_commands.json
+CMakePresets.json
+
+# Generated keymap files
 draw/base.yaml
 draw/base.svg
-nice-view-elemental
-nice-*
-prospector*
-zmk-dongle-screen
-
-zmk-input-processor-report-rate-limit
-zmk-pmw3610-driver
-zmk-input-processor-xyz/
-zmk-nice-oled/
-zmk-report-rate-limit/
-zmk-rgbled-widget/
-zmk-scroll-snap/
-gggw-zmk-keebs/

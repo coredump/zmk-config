@@ -1,0 +1,52 @@
+[tools]
+uv = "latest"
+just = "latest"
+cmake = "latest"
+ninja = "latest"
+node = "latest"
+
+[env]
+ZMK_BUILD_DIR = "{{config_root}}/.build"
+ZMK_SRC_DIR = "{{config_root}}/zmk/app"
+ZEPHYR_SDK_INSTALL_DIR = "{{config_root}}/.zephyr-sdk"
+VIRTUAL_ENV = "{{config_root}}/.venv"
+PATH = "{{config_root}}/.venv/bin:{{env.PATH}}"
+
+[tasks.setup]
+description = "Install Python dependencies and Zephyr SDK"
+run = """
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Creating Python virtual environment..."
+uv venv .venv --python 3.12
+
+echo "Installing Python dependencies..."
+uv pip install west pyelftools pyyaml pykwalify canopen packaging progress psutil yq
+uv pip install keymap-drawer
+
+if [[ ! -d "$ZEPHYR_SDK_INSTALL_DIR" ]]; then
+    echo "Installing Zephyr SDK..."
+    SDK_VERSION="0.16.8"
+
+    case "$(uname -s)-$(uname -m)" in
+        Linux-x86_64)  SDK_PLATFORM="linux-x86_64" ;;
+        Linux-aarch64) SDK_PLATFORM="linux-aarch64" ;;
+        Darwin-x86_64) SDK_PLATFORM="macos-x86_64" ;;
+        Darwin-arm64)  SDK_PLATFORM="macos-aarch64" ;;
+        *) echo "Unsupported platform"; exit 1 ;;
+    esac
+
+    SDK_FILE="zephyr-sdk-${SDK_VERSION}_${SDK_PLATFORM}_minimal.tar.xz"
+    SDK_URL="https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v${SDK_VERSION}/${SDK_FILE}"
+
+    mkdir -p "$ZEPHYR_SDK_INSTALL_DIR"
+    curl -L "$SDK_URL" | tar -xJ -C "$ZEPHYR_SDK_INSTALL_DIR" --strip-components=1
+
+    # Install ARM toolchain
+    cd "$ZEPHYR_SDK_INSTALL_DIR"
+    ./setup.sh -t arm-zephyr-eabi -c
+fi
+
+echo "Setup complete!"
+"""
