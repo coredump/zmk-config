@@ -4,7 +4,7 @@ Personal [ZMK firmware](https://github.com/zmkfirmware/zmk/) configuration for s
 
 The configuration tracks ZMK `main` branch, extended by various ZMK modules. All build dependencies are pinned in the [`west` manifest](config/west.yml).
 
-> **Note:** This configuration is based on [urob's zmk-config](https://github.com/urob/zmk-config). Refer to that repository for detailed explanations of the keymap features (timeless homerow mods, combos, smart layers, etc.).
+> **Note:** This configuration is based on [urob's zmk-config](https://github.com/urob/zmk-config). Refer to that repository for detailed explanations of the keymap features (timeless homerow mods, combos, smart layers, etc.). A lot of vibe coding goes into this build system and code changes (AI-assisted development with Claude).
 
 ## Keyboards
 
