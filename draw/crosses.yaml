@@ -5465,3 +5465,545 @@ combos:
   a: top
   o: 0.5
   s: 0.5
+layout: {zmk_keyboard: crosses, layout_name: gggw_crosses_36_layout}
+layers:
+  Base:
+  - {t: Q, s: Dead `}
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: A, h: Gui}
+  - {t: S, h: Alt}
+  - {t: D, h: Ctrl}
+  - {t: F, h: Shift}
+  - G
+  - H
+  - {t: J, h: Shift}
+  - {t: K, h: Ctrl}
+  - {t: L, h: Alt}
+  - {t: ;, h: Gui}
+  - {t: Z, h: Mouse}
+  - X
+  - {t: C, s: 'AltGr+,'}
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {t: Tab, h: Lower}
+  - {t: Enter, h: Nav}
+  - {t: Space SC, h: Num}
+  - {t: Bspc, h: Raise, s: Del}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  MacOS:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: A, h: Ctrl}
+  - {type: trans}
+  - {t: D, h: Gui}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: K, h: Gui}
+  - {type: trans}
+  - {t: ;, h: Ctrl}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {t: Enter, h: MacNav}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Gaming:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {t: Tab, h: Lower}
+  - {t: Enter, h: Nav}
+  - {t: Space SC, h: Num}
+  - {t: Bspc, h: Raise, s: Del}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Lower:
+  - '`'
+  - <
+  - '>'
+  - '-'
+  - '|'
+  - ^
+  - '{'
+  - '}'
+  - $
+  - \
+  - '!'
+  - '*'
+  - /
+  - '='
+  - '&'
+  - '#'
+  - (
+  - )
+  - _
+  - ''''
+  - '~'
+  - +
+  - '['
+  - ']'
+  - '%'
+  - '@'
+  - ':'
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Raise:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - {t: Gui, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Alt, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Ctrl, h: '$$mdi:gesture-tap-hold$$'}
+  - {t: Shift, h: '$$mdi:gesture-tap-hold$$'}
+  - {type: trans}
+  - PgDn
+  - ←
+  - ↓
+  - →
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Adjust:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - BT CLR
+  - BT 1
+  - BT 2
+  - BT 3
+  - OUT TOG
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: MacOS, h: toggle}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Boot
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: Gaming, h: toggle}
+  - Bat Level
+  - Conn
+  - {type: trans}
+  - {type: trans}
+  - Boot
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Mouse:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - Scroll
+  - Snipe
+  - Warp
+  - {type: trans}
+  - {type: trans}
+  - Left Click
+  - Middle Click
+  - Right Click
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - Right Click
+  - Left Click
+  - Middle Click
+  - Left Click
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Num:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num, type: held}
+  - {type: trans}
+  - {type: trans}
+  - CANCEL
+  - {t: Bspc, h: Raise, s: Del}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Nav:
+  - Screen Lock
+  - Next App Window
+  - Prev Win/Tab
+  - Next Tab
+  - Next Win
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - {s: Alt+F4}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Print Screen
+  - PgDn
+  - ←
+  - ↓
+  - →
+  - {type: trans}
+  - Turn Off
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Prev Desk
+  - {type: trans}
+  - Next Desk
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  MacNav:
+  - Screen Lock
+  - Next App Window
+  - Prev Win/Tab
+  - Next Tab
+  - Next Window
+  - PgUp
+  - Home
+  - ↑
+  - End
+  - {type: trans}
+  - {s: Gui+Q}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - Print Screen
+  - PgDn
+  - ←
+  - ↓
+  - →
+  - {type: trans}
+  - Turn Off
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Snipe:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Warp:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+  Scroll:
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: held}
+  - {type: held}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: 󰜼Numword, h: Num, s: St Num}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {type: trans}
+  - {t: St Shft, h: Shift, s: 󰜼 Capsword}
+combos:
+- p: [17, 16]
+  k: ESC
+  l: [Base, MacOS, Gaming]
+- p: [12, 13]
+  k: ESC
+  l: [Base, MacOS, Gaming]
+- p: [21, 23]
+  k: Cut
+  l: [Base, Gaming]
+  a: bottom
+  o: 1.5
+- p: [21, 22]
+  k: Ctl+C
+  l: [Base, Gaming]
+- p: [22, 23]
+  k: Ctl+V
+  l: [Base, Gaming]
+- p: [21, 23]
+  k: Gui+X
+  l: [MacOS]
+- p: [21, 22]
+  k: Gui+C
+  l: [MacOS]
+- p: [22, 23]
+  k: Gui+V
+  l: [MacOS]
+- p: [6, 7]
+  k: ''''
+  l: [Base, MacOS, Gaming]
+- p: [7, 8]
+  k: '"'
+  l: [Base, MacOS, Gaming]
+- p: [27, 28]
+  k: '?'
+  l: [Base, MacOS, Gaming]
+- p: [6, 7]
+  k: Dead '
+  l: [Lower]
+- p: [7, 8]
+  k: Dead "
+  l: [Lower]
+- p: [5, 7]
+  k: Dead ^
+  l: [Lower]
+  a: top
+  o: 1.0
+  s: -0.5
+- p: [6, 8]
+  k: Dead ~
+  l: [Lower]
+  a: top
+  o: 1.0
+- p: [5, 8]
+  k: Dead `
+  l: [Lower]
+  a: top
+  o: 0.5
+  s: 0.5
