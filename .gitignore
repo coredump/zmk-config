@@ -18,7 +18,6 @@ nice-*/
 # Development environment
 .venv/
 .zephyr-sdk/
-.direnv/
 
 # IDE
 .idea/
