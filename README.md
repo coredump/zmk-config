@@ -29,6 +29,21 @@ The configuration tracks ZMK `main` branch, extended by various ZMK modules. All
 
 The build process uses `mise`, `uv`, `just`, and `west` to manage dependencies and build firmware.
 
+### Differences from urob's zmk-config
+
+[urob's zmk-config](https://github.com/urob/zmk-config) uses **Nix flakes** for reproducible builds. This repository uses **mise** instead, which offers:
+
+| | urob's (Nix) | This repo (mise) |
+|---|---|---|
+| **Setup** | `nix develop` | `mise install && just setup` |
+| **Build** | `west build ...` | `just build <target>` |
+| **Dependencies** | `flake.nix` + `flake.lock` | `.mise.toml` + `config/west.yml` |
+| **Python** | Nix-managed | uv + venv |
+| **Zephyr SDK** | Nix package | Downloaded to `.zephyr-sdk/` |
+| **Platforms** | Linux, macOS (with Nix) | Linux, macOS (no Nix required) |
+
+The keymap features and ZMK modules are the same - only the build tooling differs.
+
 ### Pre-requisites
 
 1. Install [mise](https://mise.jdx.dev/):
