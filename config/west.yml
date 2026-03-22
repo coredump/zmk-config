@@ -12,6 +12,13 @@ manifest:
       url-base: https://github.com/kot149
     - name: prospector
       url-base: https://github.com/t-ogura
+    # moving from the ggg west.yaml to pin efog's repo
+    - name: efogdev
+      url-base: https://github.com/efogdev
+    - name: badjeff
+      url-base: https://github.com/badjeff
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
 
   projects:
     - name: zmk
@@ -39,7 +46,6 @@ manifest:
     - name: gggw-zmk-keebs
       remote: Good-Great-Grand-Wonderful
       revision: zephyr-4.1
-      import: config/west.yml
 
     - name: zmk-scroll-snap
       remote: kot149
@@ -49,6 +55,21 @@ manifest:
       remote: prospector
       revision: v2.1.0  # Use specific version tag
       path: modules/prospector-zmk-module
+
+    # pinning ggg
+    - name: zmk-pmw3610-driver
+      remote: efogdev
+      revision: zephyr-4.1
+    - name: zmk-report-rate-limit
+      remote: efogdev
+      revision: zmk-0.4
+    - name: zmk-input-processor-xyz
+      remote: badjeff
+      revision: main
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: e9472d6c59b8e901753dfa6c337c1b24cb70f571
+
 
   self:
     path: config

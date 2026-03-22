@@ -107,9 +107,14 @@ ZMK_MACRO(mac_prsc, bindings = < &kp LG(LS(N4)) >;)
   ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
 
 #include "combos.dtsi"
-#include "mouse.dtsi"
+
+
+#include <dt-bindings/zmk/pointing.h>
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 #ifndef CONFIG_TRACKBALL
+#include "mouse.dtsi"
 ZMK_TRI_STATE(
     smart_mouse, bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
     ignored-key-positions = <LB3 LB4 LH1 RH1 RH0 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3>;
@@ -186,7 +191,6 @@ ZMK_HOLD_TAP(smart_shift, bindings = <&kp>, <&sft_dance>; flavor = "balanced";
 ZMK_TAP_DANCE(sft_dance, bindings = <&sk LSHFT>, <&caps_word>;
               tapping-term-ms = <200>;)
 
-
 #ifndef ZMK_BASE_LAYER
   #define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                 \
       ZMK_LAYER(name, LT RT LM RM LB RB LH RH)
@@ -207,10 +211,10 @@ ZMK_BASE_LAYER(MacOS,
 )
 
 ZMK_BASE_LAYER(Gaming,
-    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
-    &kp A           &kp S           &kp D            &kp F             &kp G         ,    &kp H          &kp J           &kp K            &kp L            &kp SEMI         ,
-    ___             ___             ___              ___               ___           ,    ___            ___             ___              ___              ___              ,
-                                                     &lt LOWER TAB     &lt NAV RET   ,    LT_NUM      LT_BSDEL
+    &kp TAB         &kp Q           &kp W            &kp E             &kp R         ,    ___            ___             ___              ___              ___              ,
+    &kp ESC         &kp A           &kp S            &kp D             &kp F         ,    &kp H          &kp J           &kp K            &kp L            ___              ,
+    &kp LSHFT       &kp Z           &kp X            &kp C             &kp V         ,    ___            ___             ___              ___              ___              ,
+                                                     &kp LCTRL         &kp SPACE     ,    &kp RET        LT_BSDEL
 )
 
 ZMK_BASE_LAYER(Lower,
@@ -223,7 +227,7 @@ ZMK_BASE_LAYER(Lower,
 ZMK_BASE_LAYER(Raise,
     ___			   ___              ___              ___                ___          ,    &kp PG_UP      &kp HOME        &kp UP           &kp END          ___              ,
     &sklazy LGUI  &sklazy LALT      &sklazy LCTRL    &sklazy LSHFT      ___          ,    &kp PG_DN      &kp LEFT        &kp DOWN         &kp RIGHT        ___              ,
-    ___            ___              ___              ___                ___          ,    ___            ___             ___              ___              ___              ,
+    ___            ___              ___              ___                &tog GAMING  ,    ___            ___             ___              ___              ___              ,
                                                      ___                ___          ,    ___            ___
 )
 
