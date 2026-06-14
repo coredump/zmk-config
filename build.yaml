@@ -15,3 +15,12 @@ include:
   - board: xiao_ble/nrf52840
     shield: prospector_scanner
     artifact-name: prospector_scanner
+
+  - board: xiao_ble/nrf52840
+    shield: totemball_left rgbled_adapter
+    artifact-name: totemball_standalone_left
+  - board: xiao_ble/nrf52840
+    shield: totemball_right rgbled_adapter
+    artifact-name: totemball_standalone_right
+    cmake-args: "-DDTS_EXTRA_CPPFLAGS=-DUSE_TB=1"
+#    snippet: zmk-usb-logging
